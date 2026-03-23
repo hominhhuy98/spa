@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import Link from 'next/link';
 
 interface Post {
   id: string;
@@ -31,7 +32,7 @@ export default async function SpaPage() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.map((post) => (
-            <div key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
+            <Link href={`/spa/${post.id}`} key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
               <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{post.title}</h3>
@@ -45,7 +46,7 @@ export default async function SpaPage() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

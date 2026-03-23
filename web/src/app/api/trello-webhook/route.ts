@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
+import { marked } from 'marked';
 
 // Webhook xử lý push từ Trello (khi card chuyển cột sang "SPA")
 export async function POST(req: Request) {
@@ -27,13 +28,17 @@ export async function POST(req: Request) {
 
     // Mapping Data
     const title = payload.title || payload?.action?.data?.card?.name || 'Bài viết mới từ Trello';
-    const description = payload.description || payload?.action?.data?.card?.desc || '<p>Đang cập nhật nội dung...</p>';
+    const rawDescription = payload.description || payload?.action?.data?.card?.desc || '*Đang cập nhật nội dung...*';
+    
+    // Parse Markdown to HTML
+    const htmlDescription = await marked.parse(rawDescription);
+
     const id = payload.id || payload?.action?.data?.card?.id || `card-${Date.now()}`;
 
     const newPost = {
       id,
       title,
-      description,
+      description: htmlDescription,
       imageUrl: coverUrl,
       publishedAt: new Date().toISOString()
     };

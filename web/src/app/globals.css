@@ -1,6 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #1E3A8A;
+  --color-secondary: #0F766E;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;

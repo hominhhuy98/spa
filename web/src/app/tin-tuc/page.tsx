@@ -1,14 +1,16 @@
+import Link from 'next/link';
+
 export default function TinTuc() {
   const kienThuc = [
     {
-      id: 1,
+      id: "1",
       title: "Phòng ngừa mụn trong mùa hè nắng nóng",
       desc: "Cách chăm sóc da và ngăn ngừa mụn khi thời tiết đổ nhiều mồ hôi.",
       nguon: "Hướng dẫn da liễu Bộ Y Tế",
       date: "2026-03-23"
     },
     {
-      id: 2,
+      id: "2",
       title: "Hiểu đúng về Corticoid trong mỹ phẩm",
       desc: "Những tác hại khôn lường khi sử dụng kem trộn chứa Corticoid trôi nổi trên thị trường.",
       nguon: "Tổ chức Y tế Thế giới (WHO) - Dermatology Guidelines",
@@ -25,16 +27,17 @@ export default function TinTuc() {
 
       <div className="space-y-8">
         {kienThuc.map((bai) => (
-          <div key={bai.id} className="bg-white p-6 rounded-lg shadow border-l-4 border-secondary flex flex-col md:flex-row md:items-center">
+          <div key={bai.id} className="bg-white p-6 rounded-lg shadow border-l-4 border-secondary flex flex-col md:flex-row md:items-center hover:shadow-lg transition">
             <div className="flex-grow">
-              <h2 className="text-2xl font-semibold mb-2">{bai.title}</h2>
+              <Link href={`/tin-tuc/${bai.id}`} className="text-2xl font-semibold mb-2 hover:text-primary transition">{bai.title}</Link>
               <p className="text-gray-700 mb-4">{bai.desc}</p>
               <div className="bg-blue-50 text-blue-800 text-sm px-3 py-1 rounded inline-block">
                 <strong>Nguồn xác thực:</strong> {bai.nguon}
               </div>
             </div>
-            <div className="mt-4 md:mt-0 md:ml-6 text-gray-400 text-sm whitespace-nowrap">
-              Đăng ngày: {new Date(bai.date).toLocaleDateString('vi-VN')}
+            <div className="mt-4 md:mt-0 md:ml-6 text-gray-400 text-sm whitespace-nowrap flex flex-col items-end">
+              <span className="mb-2">Đăng ngày: {new Date(bai.date).toLocaleDateString('vi-VN')}</span>
+              <Link href={`/tin-tuc/${bai.id}`} className="text-primary font-medium hover:underline">Đọc tiếp &rarr;</Link>
             </div>
           </div>
         ))}

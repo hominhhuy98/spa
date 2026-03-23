@@ -28,6 +28,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: 'Đặt lịch thành công!' }, { status: 200 });
   } catch (error) {
+    console.error("Lỗi khi đặt lịch:", error);
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
