@@ -1,0 +1,29 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
+8:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:T79a,
+      <p>Corticosteroid (thường gọi là Corticoid) là nhóm thuốc kháng viêm cực mạnh, được phép dùng trong điều trị y khoa dưới sự giám sát chặt chẽ của bác sĩ. Tuy nhiên, nhóm thuốc này đang bị lạm dụng phổ biến trong "kem trộn" làm trắng da trôi nổi — gây ra hàng loạt tác hại nghiêm trọng.</p>
+      <h2>Dấu Hiệu Nhận Biết Kem Trộn Có Corticoid</h2>
+      <ul>
+        <li>Da trắng sáng nhanh bất thường trong 1–2 tuần đầu dùng.</li>
+        <li>Khi ngừng kem, da nổi mụn ồ ạt, đỏ bừng, ngứa rát — dấu hiệu "hội chứng cai" Corticoid.</li>
+        <li>Da mỏng dần, xuất hiện mao mạch đỏ lộ rõ (telangiectasia).</li>
+        <li>Lông vùng dùng kem mọc nhiều hơn (hypertrichosis).</li>
+      </ul>
+      <h2>Tác Hại Khi Dùng Lâu Dài</h2>
+      <ul>
+        <li><strong>Teo da (skin atrophy):</strong> Da mỏng, dễ rách, mất độ đàn hồi vĩnh viễn.</li>
+        <li><strong>Rổ da Cushing cục bộ:</strong> Giãn mao mạch, xuất hiện vết rạn trắng (striae).</li>
+        <li><strong>Nhiễm trùng cơ hội:</strong> Corticoid ức chế miễn dịch cục bộ → nấm da, viêm nang lông lan rộng.</li>
+        <li><strong>Tăng nhãn áp:</strong> Dùng gần mắt có nguy cơ gây Glaucoma.</li>
+        <li><strong>Phụ thuộc thuốc:</strong> Da không thể tự điều tiết khi ngừng, gây "rebound" mạnh.</li>
+      </ul>
+      <h2>Hướng Điều Trị Phục Hồi</h2>
+      <p>Quá trình phục hồi sau lạm dụng Corticoid cần được bác sĩ da liễu giám sát, bao gồm: ngừng dùng từ từ (hoặc thay bằng Corticoid nhẹ hơn), điều trị biến chứng, phục hồi hàng rào da bằng Ceramide và theo dõi định kỳ. Thời gian phục hồi thường kéo dài 3–12 tháng.</p>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-slate-50 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-12","children":[["$","$L2",null,{"href":"/tin-tuc","className":"text-primary font-semibold hover:underline inline-flex items-center gap-1 mb-8","children":"← Quay lại Kiến thức Y khoa"}],["$","article",null,{"className":"bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-3 mb-6","children":[["$","span",null,{"className":"text-xs font-bold px-3 py-1 rounded-full bg-red-100 text-red-700","children":"Cảnh Báo Y Khoa"}],["$","span",null,{"className":"text-sm text-gray-400","children":"10 tháng 3, 2026"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug","children":"Hiểu Đúng Về Corticoid Trong Mỹ Phẩm & Kem Trộn"}],["$","div",null,{"className":"flex items-center gap-2 mb-8 pb-6 border-b border-gray-100","children":[["$","svg",null,{"className":"w-4 h-4 text-blue-500 shrink-0","fill":"none","stroke":"currentColor","viewBox":"0 0 24 24","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"}]}],["$","span",null,{"className":"text-sm text-blue-700 font-semibold","children":["Nguồn xác thực: ","WHO – Dermatology Guidelines"]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-black prose-a:text-primary prose-strong:text-gray-900 prose-li:text-gray-700 prose-table:text-sm","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4"]}],"$L5"]}]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GxIyLaFiaVwGYBSrG-GC1"}
+4:["$","div",null,{"className":"mt-10 pt-6 border-t border-gray-100 bg-amber-50 rounded-xl p-4","children":["$","p",null,{"className":"text-amber-800 text-sm","children":[["$","strong",null,{"children":"⚠️ Tuyên bố miễn trừ trách nhiệm:"}]," Bài viết mang tính chất thông tin y khoa tham khảo. Không thay thế cho tư vấn, chẩn đoán hoặc chỉ định điều trị của bác sĩ chuyên khoa. Hãy thăm khám trực tiếp để được tư vấn cá nhân hóa."]}]}]
+5:["$","div",null,{"className":"mt-8 text-center","children":[["$","p",null,{"className":"text-gray-600 mb-4","children":"Cần được tư vấn chuyên sâu về tình trạng da của bạn?"}],["$","$L2",null,{"href":"/dat-lich","className":"bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition inline-block","children":"Đặt Lịch Khám Với Bác Sĩ →"}]]}]
+6:["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

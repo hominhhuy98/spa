@@ -1,0 +1,26 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
+7:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+8:"$Sreact.suspense"
+3:T616,
+      <p>Nám da (Melasma) là rối loạn tăng sắc tố da mãn tính, ảnh hưởng chủ yếu đến phụ nữ (95%) ở độ tuổi sinh sản. Việc phân biệt chính xác loại nám là yêu cầu bắt buộc trước khi lập phác đồ điều trị — điều trị sai loại không chỉ kém hiệu quả mà còn làm nám nặng thêm.</p>
+      <h2>Phân Loại Nám Theo Độ Sâu</h2>
+      <table>
+        <thead><tr><th>Đặc điểm</th><th>Nám Thượng Bì (Epidermal)</th><th>Nám Hạ Bì (Dermal)</th></tr></thead>
+        <tbody>
+          <tr><td>Màu sắc</td><td>Nâu đậm, nâu vàng</td><td>Xám xanh, xám nâu</td></tr>
+          <tr><td>Đèn Wood</td><td>Tương phản rõ (đậm hơn)</td><td>Không tương phản (không thay đổi)</td></tr>
+          <tr><td>Đáp ứng điều trị</td><td>Tốt hơn với kem bôi</td><td>Khó, cần Laser chuyên sâu</td></tr>
+        </tbody>
+      </table>
+      <h2>Nguyên Tắc Điều Trị Chung (Bắt Buộc)</h2>
+      <ol>
+        <li><strong>Chống nắng SPF 50+ PA++++</strong> mỗi 2–3 giờ, không kể trong hay ngoài nhà (ánh sáng nhìn thấy HEV cũng kích hoạt nám).</li>
+        <li><strong>Không tự ý laser</strong> khi chưa phân loại nám — laser sai bước sóng, sai thông số trên nám hạ bì có thể gây bùng phát nặng hơn (PIH).</li>
+        <li>Kiên trì điều trị ít nhất 3–6 tháng. Nám là bệnh mãn tính, cần duy trì để phòng tái phát.</li>
+      </ol>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-slate-50 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-12","children":[["$","$L2",null,{"href":"/tin-tuc","className":"text-primary font-semibold hover:underline inline-flex items-center gap-1 mb-8","children":"← Quay lại Kiến thức Y khoa"}],["$","article",null,{"className":"bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-3 mb-6","children":[["$","span",null,{"className":"text-xs font-bold px-3 py-1 rounded-full bg-purple-100 text-purple-700","children":"Nám Da"}],["$","span",null,{"className":"text-sm text-gray-400","children":"05 tháng 3, 2026"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug","children":"Nám Da: Phân Biệt Nám Thượng Bì Và Hạ Bì Để Điều Trị Đúng"}],["$","div",null,{"className":"flex items-center gap-2 mb-8 pb-6 border-b border-gray-100","children":[["$","svg",null,{"className":"w-4 h-4 text-blue-500 shrink-0","fill":"none","stroke":"currentColor","viewBox":"0 0 24 24","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"}]}],["$","span",null,{"className":"text-sm text-blue-700 font-semibold","children":["Nguồn xác thực: ","Journal of AAD 2023"]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-black prose-a:text-primary prose-strong:text-gray-900 prose-li:text-gray-700 prose-table:text-sm","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"className":"mt-10 pt-6 border-t border-gray-100 bg-amber-50 rounded-xl p-4","children":["$","p",null,{"className":"text-amber-800 text-sm","children":[["$","strong",null,{"children":"⚠️ Tuyên bố miễn trừ trách nhiệm:"}]," Bài viết mang tính chất thông tin y khoa tham khảo. Không thay thế cho tư vấn, chẩn đoán hoặc chỉ định điều trị của bác sĩ chuyên khoa. Hãy thăm khám trực tiếp để được tư vấn cá nhân hóa."]}]}]]}],"$L4"]}]}],["$L5"],"$L6"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GxIyLaFiaVwGYBSrG-GC1"}
+4:["$","div",null,{"className":"mt-8 text-center","children":[["$","p",null,{"className":"text-gray-600 mb-4","children":"Cần được tư vấn chuyên sâu về tình trạng da của bạn?"}],["$","$L2",null,{"href":"/dat-lich","className":"bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition inline-block","children":"Đặt Lịch Khám Với Bác Sĩ →"}]]}]
+5:["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]
+6:["$","$L7",null,{"children":["$","$8",null,{"name":"Next.MetadataOutlet","children":"$@9"}]}]
+9:null

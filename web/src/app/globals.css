@@ -2,12 +2,41 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-primary: #1E3A8A;
-  --color-secondary: #0F766E;
+  --color-primary: #1A8DC4;
+  --color-primary-dark: #0D6FA3;
+  --color-secondary: #C8A040;
+  --color-secondary-light: #E8C060;
+  --color-secondary-dark: #A07830;
+  
+  --font-sans: var(--font-be-vietnam), ui-sans-serif, system-ui;
+  --font-serif: var(--font-playfair), ui-serif, Georgia;
+
+  --animate-fade-in-up: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes subtle-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-subtle-zoom {
+  animation: subtle-zoom 20s ease-in-out infinite alternate;
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #f8fafc;
   color: #0f172a;
+  scroll-behavior: smooth;
 }

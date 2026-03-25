@@ -1,12 +1,14 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Post {
   id: string;
   title: string;
   description: string;
   imageUrl: string;
+  status?: string;
   publishedAt: string;
 }
 
@@ -15,7 +17,9 @@ export default async function SpaPage() {
   let posts: Post[] = [];
   try {
     const fileContents = await fs.readFile(filePath, 'utf8');
-    posts = JSON.parse(fileContents);
+    const allPosts = JSON.parse(fileContents);
+    // Chỉ lấy bài viết có status là published (hoặc không có trường status coi như public cho backwards-compatibility)
+    posts = allPosts.filter((p: any) => !p.status || p.status === 'published');
   } catch (error) {
     console.error("Lỗi khi đọc file spa-posts.json", error);
   }
@@ -31,9 +35,11 @@ export default async function SpaPage() {
         <div className="text-center text-gray-500">Chưa có bài viết nào được đồng bộ.</div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post) => (
+          {posts.map((post, idx) => (
             <Link href={`/spa/${post.id}`} key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow">
-              <img src={post.imageUrl} alt={post.title} className="w-full h-48 object-cover" />
+              <div className="relative w-full h-48 bg-gray-100">
+                <Image src={post.imageUrl} alt={post.title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" priority={idx < 6} />
+              </div>
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{post.title}</h3>
                 <div 

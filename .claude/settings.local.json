@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:unsplash.com)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1588776814546-daab30f310ae?w=1920&h=700&fit=crop&auto=format&q=85\" -o banner_test1.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1522337360826-f78e28f36a0c?w=1920&h=700&fit=crop&auto=format&q=85\" -o banner_test2.jpg)",
+      "Bash(curl -sL \"https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=1920&h=700&fit=crop&auto=format&q=85\" -o banner_test3.jpg)",
+      "Bash(git add:*)"
+    ]
+  }
+}

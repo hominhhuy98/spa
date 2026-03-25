@@ -1,0 +1,27 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
+8:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:T6a8,
+      <p>Retinoid là nhóm dẫn xuất Vitamin A, được AAD (Hiệp hội Da liễu Hoa Kỳ) và hầu hết các tổ chức da liễu thế giới xếp vào nhóm thành phần có bằng chứng khoa học mạnh nhất trong chăm sóc da: trị mụn, chống lão hóa, điều trị rối loạn sừng hóa.</p>
+      <h2>So Sánh Các Thế Hệ Retinoid</h2>
+      <ul>
+        <li><strong>Retinol (OTC):</strong> Yếu nhất, cần chuyển hóa qua 2 bước → Retinal → Retinoic acid. Phù hợp người mới bắt đầu.</li>
+        <li><strong>Retinaldehyde (Retinal):</strong> Trung gian, mạnh hơn Retinol 11 lần, ít kích ứng hơn Tretinoin.</li>
+        <li><strong>Tretinoin (Retinoic acid – kê đơn):</strong> Mạnh nhất trong Retinoid tại chỗ. Hiệu quả cao nhất, kích ứng cao nhất.</li>
+        <li><strong>Adapalene 0.1% (OTC ở nhiều nước):</strong> Thế hệ 3, ít kích ứng hơn Tretinoin, đặc biệt hiệu quả với mụn.</li>
+      </ul>
+      <h2>Quy Tắc "Sandwich" Giảm Kích Ứng</h2>
+      <p>Cho người mới bắt đầu: Dưỡng ẩm → Đợi 10 phút → Retinoid (lượng hạt đậu cho toàn mặt) → Dưỡng ẩm. Bắt đầu 2 lần/tuần, tăng dần sau 4 tuần.</p>
+      <h2>Lưu Ý Quan Trọng</h2>
+      <ul>
+        <li>Chỉ dùng ban đêm (UV phân hủy Retinoid và tăng nhạy cảm da với nắng).</li>
+        <li>Tuyệt đối không dùng khi mang thai (Isotretinoin và Tretinoin gây dị tật thai nhi).</li>
+        <li>"Retinoid uglies" (da bong, đỏ, ngứa tuần 2–6) là bình thường — kiên trì qua giai đoạn này.</li>
+      </ul>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-slate-50 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-12","children":[["$","$L2",null,{"href":"/tin-tuc","className":"text-primary font-semibold hover:underline inline-flex items-center gap-1 mb-8","children":"← Quay lại Kiến thức Y khoa"}],["$","article",null,{"className":"bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-3 mb-6","children":[["$","span",null,{"className":"text-xs font-bold px-3 py-1 rounded-full bg-green-100 text-green-700","children":"Kiến Thức Chăm Sóc Da"}],["$","span",null,{"className":"text-sm text-gray-400","children":"28 tháng 2, 2026"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug","children":"Retinoid: 'Vàng Ròng' Của Da Liễu Và Cách Dùng An Toàn"}],["$","div",null,{"className":"flex items-center gap-2 mb-8 pb-6 border-b border-gray-100","children":[["$","svg",null,{"className":"w-4 h-4 text-blue-500 shrink-0","fill":"none","stroke":"currentColor","viewBox":"0 0 24 24","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"}]}],["$","span",null,{"className":"text-sm text-blue-700 font-semibold","children":["Nguồn xác thực: ","AAD Clinical Guidelines 2024"]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-black prose-a:text-primary prose-strong:text-gray-900 prose-li:text-gray-700 prose-table:text-sm","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"className":"mt-10 pt-6 border-t border-gray-100 bg-amber-50 rounded-xl p-4","children":"$L4"}]]}],"$L5"]}]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GxIyLaFiaVwGYBSrG-GC1"}
+4:["$","p",null,{"className":"text-amber-800 text-sm","children":[["$","strong",null,{"children":"⚠️ Tuyên bố miễn trừ trách nhiệm:"}]," Bài viết mang tính chất thông tin y khoa tham khảo. Không thay thế cho tư vấn, chẩn đoán hoặc chỉ định điều trị của bác sĩ chuyên khoa. Hãy thăm khám trực tiếp để được tư vấn cá nhân hóa."]}]
+5:["$","div",null,{"className":"mt-8 text-center","children":[["$","p",null,{"className":"text-gray-600 mb-4","children":"Cần được tư vấn chuyên sâu về tình trạng da của bạn?"}],["$","$L2",null,{"href":"/dat-lich","className":"bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition inline-block","children":"Đặt Lịch Khám Với Bác Sĩ →"}]]}]
+6:["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

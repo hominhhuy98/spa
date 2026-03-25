@@ -35,11 +35,20 @@ export async function POST(req: Request) {
 
     const id = payload.id || payload?.action?.data?.card?.id || `card-${Date.now()}`;
 
+    // Kiểm tra nhãn (label) để phân biệt trạng thái Public hay Draft
+    // Nếu có nhãn "Published" hoặc "Public" thì đăng, ngược lại lưu ở trạng thái "Draft"
+    const labels = payload?.action?.data?.card?.labels || payload?.labels || [];
+    const isPublished = labels.some((label: any) => 
+      label.name?.toLowerCase() === 'published' || label.name?.toLowerCase() === 'public'
+    );
+    const postStatus = isPublished ? 'published' : 'draft';
+
     const newPost = {
       id,
       title,
       description: htmlDescription,
       imageUrl: coverUrl,
+      status: postStatus,
       publishedAt: new Date().toISOString()
     };
 

@@ -1,0 +1,29 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
+8:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:T71f,
+      <p>Chống nắng là bước chăm sóc da quan trọng nhất để phòng ngừa lão hóa sớm, ung thư da, nám và tăng sắc tố. Tuy nhiên, nhiều người vẫn còn hiểu sai về cách sử dụng đúng.</p>
+      <h2>SPF Và PA Là Gì?</h2>
+      <ul>
+        <li><strong>SPF (Sun Protection Factor):</strong> Chỉ số bảo vệ UVB (gây cháy nắng, ung thư da). SPF 50 chặn 98% UVB. SPF 30 chặn 97%.</li>
+        <li><strong>PA+ đến PA++++:</strong> Chỉ số bảo vệ UVA (gây lão hóa, nám, ung thư tế bào đáy). PA++++ = bảo vệ cao nhất.</li>
+        <li><strong>Ánh sáng HEV (Blue Light):</strong> Từ màn hình và ánh sáng nhìn thấy — cũng kích hoạt nám. Cần chống nắng khoáng có Iron Oxide.</li>
+      </ul>
+      <h2>Khoáng (Physical) Vs Hóa Học (Chemical)</h2>
+      <ul>
+        <li><strong>Khoáng (Zinc Oxide, Titanium Dioxide):</strong> Hoạt động ngay khi bôi, an toàn cho da nhạy cảm, phụ nữ có thai, trẻ em. Nhược: để lại bóng trắng (white cast).</li>
+        <li><strong>Hóa học (Avobenzone, Tinosorb, Uvinul):</strong> Texture mỏng nhẹ hơn, không trắng da. Cần bôi trước 15–20 phút. Một số công thức cũ (Oxybenzone) có thể kích ứng.</li>
+      </ul>
+      <h2>Quy Tắc Sử Dụng Đúng</h2>
+      <ol>
+        <li>Lượng: <strong>1/4 thìa cà phê (khoảng 1.5–2ml)</strong> cho mặt và cổ — phần lớn mọi người bôi chỉ bằng 1/4–1/2 lượng cần thiết.</li>
+        <li>Thoa lại mỗi <strong>2–3 giờ</strong> khi tiếp xúc nắng. Không "chống nắng một lần cả ngày".</li>
+        <li>Bôi <strong>trong nhà cũng cần</strong> nếu ngồi gần cửa sổ (UVA xuyên kính).</li>
+      </ol>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-slate-50 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-12","children":[["$","$L2",null,{"href":"/tin-tuc","className":"text-primary font-semibold hover:underline inline-flex items-center gap-1 mb-8","children":"← Quay lại Kiến thức Y khoa"}],["$","article",null,{"className":"bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-3 mb-6","children":[["$","span",null,{"className":"text-xs font-bold px-3 py-1 rounded-full bg-green-100 text-green-700","children":"Kiến Thức Chăm Sóc Da"}],["$","span",null,{"className":"text-sm text-gray-400","children":"14 tháng 2, 2026"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug","children":"Chống Nắng Đúng Cách: SPF, PA, Khoáng Và Hóa Học"}],["$","div",null,{"className":"flex items-center gap-2 mb-8 pb-6 border-b border-gray-100","children":[["$","svg",null,{"className":"w-4 h-4 text-blue-500 shrink-0","fill":"none","stroke":"currentColor","viewBox":"0 0 24 24","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"}]}],["$","span",null,{"className":"text-sm text-blue-700 font-semibold","children":["Nguồn xác thực: ","FDA Sunscreen Monograph 2023"]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-black prose-a:text-primary prose-strong:text-gray-900 prose-li:text-gray-700 prose-table:text-sm","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4"]}],"$L5"]}]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GxIyLaFiaVwGYBSrG-GC1"}
+4:["$","div",null,{"className":"mt-10 pt-6 border-t border-gray-100 bg-amber-50 rounded-xl p-4","children":["$","p",null,{"className":"text-amber-800 text-sm","children":[["$","strong",null,{"children":"⚠️ Tuyên bố miễn trừ trách nhiệm:"}]," Bài viết mang tính chất thông tin y khoa tham khảo. Không thay thế cho tư vấn, chẩn đoán hoặc chỉ định điều trị của bác sĩ chuyên khoa. Hãy thăm khám trực tiếp để được tư vấn cá nhân hóa."]}]}]
+5:["$","div",null,{"className":"mt-8 text-center","children":[["$","p",null,{"className":"text-gray-600 mb-4","children":"Cần được tư vấn chuyên sâu về tình trạng da của bạn?"}],["$","$L2",null,{"href":"/dat-lich","className":"bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition inline-block","children":"Đặt Lịch Khám Với Bác Sĩ →"}]]}]
+6:["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

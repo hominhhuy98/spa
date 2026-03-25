@@ -1,0 +1,43 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
+8:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:Tf41,
+      <p>Nhiều người điều trị mụn trong thời gian dài nhưng không thấy cải thiện — thậm chí ngày càng nặng hơn. Lý do thường không phải là thuốc không hiệu quả, mà là những thói quen chăm sóc da hàng ngày đang vô tình phá vỡ quá trình điều trị.</p>
+
+      <h2>1. Thay Đổi Sản Phẩm Liên Tục</h2>
+      <p><strong>Hậu quả:</strong> Kích ứng da liên tục, mụn nặng hơn do da chưa thích nghi.</p>
+      <p><strong>Lời khuyên:</strong> Da cần 6–8 tuần để thích nghi với sản phẩm mới và thể hiện hiệu quả. Hãy kiên trì đủ thời gian trước khi đánh giá. Nếu sau 2 tháng không thấy cải thiện — đó mới là lúc thay đổi.</p>
+
+      <h2>2. Chăm Sóc Da Khi Chưa Hiểu Rõ Loại Da</h2>
+      <p><strong>Hậu quả:</strong> Sản phẩm không phù hợp → kích ứng, bít tắc lỗ chân lông, mụn tái phát.</p>
+      <p><strong>Lời khuyên:</strong> Khám với bác sĩ da liễu để xác định loại da (Fitzpatrick I–VI, da dầu/khô/hỗn hợp/nhạy cảm) và nhận phác đồ chăm sóc phù hợp từng người.</p>
+
+      <h2>3. Tự Nặn Mụn Tại Nhà</h2>
+      <p><strong>Hậu quả:</strong> Viêm nhiễm lan rộng, để lại thâm sau mụn (PIH) và sẹo rỗ vĩnh viễn.</p>
+      <p><strong>Lời khuyên:</strong> Hãy để chuyên viên có tay nghề xử lý đúng cách. Nặn mụn đúng kỹ thuật trong điều kiện vô trùng giúp hạn chế tối đa tổn thương và ngăn thâm sẹo.</p>
+
+      <h2>4. Không Làm Sạch Da Trước Khi Đi Ngủ</h2>
+      <p><strong>Hậu quả:</strong> Da tích tụ bã nhờn, bụi bẩn, kem chống nắng → bít tắc lỗ chân lông → nổi mụn đầu đen và mụn viêm.</p>
+      <p><strong>Lời khuyên:</strong> Tẩy trang và rửa mặt sạch mỗi tối <em>kể cả khi không makeup</em>. Đây là bước không thể bỏ qua trong bất kỳ phác đồ chăm sóc da nào.</p>
+
+      <h2>5. Tẩy Da Chết Quá Thường Xuyên</h2>
+      <p><strong>Hậu quả:</strong> Hàng rào bảo vệ da bị phá vỡ → da yếu, mỏng, nhạy cảm và dễ nổi mụn hơn.</p>
+      <p><strong>Lời khuyên:</strong> Chỉ nên tẩy tế bào chết 1–2 lần/tuần. Nếu đang dùng Retinoid hoặc BHA (Salicylic Acid) — cần giảm tần suất hoặc dừng hẳn tẩy da chết vật lý.</p>
+
+      <h2>6. Lối Sống Chưa Khoa Học</h2>
+      <p><strong>Hậu quả:</strong> Đồ cay nóng, thức khuya, ăn nhiều đường làm tăng viêm toàn thân và kích thích tuyến bã nhờn.</p>
+      <p><strong>Lời khuyên:</strong> Uống đủ 2 lít nước/ngày, ngủ trước 23:00, ăn nhiều rau xanh và hạn chế đường/sữa bò. Nghiên cứu AAD 2022 cho thấy chế độ ăn ít đường huyết giúp giảm mụn đáng kể.</p>
+
+      <h2>7. Thường Xuyên Sờ Tay Lên Mặt</h2>
+      <p><strong>Hậu quả:</strong> Bàn tay mang trung bình 200+ chủng vi khuẩn — chạm tay lên mặt là đưa vi khuẩn trực tiếp vào lỗ chân lông.</p>
+      <p><strong>Lời khuyên:</strong> Không chạm tay lên mặt khi chưa rửa tay. Rửa tay sạch trước khi thoa mỹ phẩm. Thay vỏ gối 2–3 lần/tuần để giảm vi khuẩn tiếp xúc với da khi ngủ.</p>
+
+      <h2>Bạn Đang Mắc Bao Nhiêu Trong 7 Sai Lầm Này?</h2>
+      <p>Để điều trị mụn đúng cách và hiệu quả, đừng tự loay hoay một mình. Bác sĩ Da liễu Chuyên khoa II tại BV Y Dược Sài Gòn sẽ giúp bạn xác định đúng nguyên nhân và xây dựng phác đồ điều trị cá nhân hóa — tránh lãng phí thời gian và tiền bạc vào những sản phẩm không phù hợp.</p>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-slate-50 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-12","children":[["$","$L2",null,{"href":"/tin-tuc","className":"text-primary font-semibold hover:underline inline-flex items-center gap-1 mb-8","children":"← Quay lại Kiến thức Y khoa"}],["$","article",null,{"className":"bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-3 mb-6","children":[["$","span",null,{"className":"text-xs font-bold px-3 py-1 rounded-full bg-orange-100 text-orange-700","children":"Mụn Trứng Cá"}],["$","span",null,{"className":"text-sm text-gray-400","children":"25 tháng 3, 2026"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug","children":"7 Thói Quen Chăm Sóc Da Khiến Mụn Ngày Càng Nặng Hơn"}],["$","div",null,{"className":"flex items-center gap-2 mb-8 pb-6 border-b border-gray-100","children":[["$","svg",null,{"className":"w-4 h-4 text-blue-500 shrink-0","fill":"none","stroke":"currentColor","viewBox":"0 0 24 24","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"}]}],["$","span",null,{"className":"text-sm text-blue-700 font-semibold","children":["Nguồn xác thực: ","BV Y Dược Sài Gòn – Da Liễu Chuyên Sâu"]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-black prose-a:text-primary prose-strong:text-gray-900 prose-li:text-gray-700 prose-table:text-sm","dangerouslySetInnerHTML":{"__html":"$3"}}],"$L4"]}],"$L5"]}]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GxIyLaFiaVwGYBSrG-GC1"}
+4:["$","div",null,{"className":"mt-10 pt-6 border-t border-gray-100 bg-amber-50 rounded-xl p-4","children":["$","p",null,{"className":"text-amber-800 text-sm","children":[["$","strong",null,{"children":"⚠️ Tuyên bố miễn trừ trách nhiệm:"}]," Bài viết mang tính chất thông tin y khoa tham khảo. Không thay thế cho tư vấn, chẩn đoán hoặc chỉ định điều trị của bác sĩ chuyên khoa. Hãy thăm khám trực tiếp để được tư vấn cá nhân hóa."]}]}]
+5:["$","div",null,{"className":"mt-8 text-center","children":[["$","p",null,{"className":"text-gray-600 mb-4","children":"Cần được tư vấn chuyên sâu về tình trạng da của bạn?"}],["$","$L2",null,{"href":"/dat-lich","className":"bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition inline-block","children":"Đặt Lịch Khám Với Bác Sĩ →"}]]}]
+6:["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

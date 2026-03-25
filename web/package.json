@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next dev",
     "build": "next build",
+    "build:static": "next build && move out dist",
     "start": "next start",
     "lint": "next lint"
   },
@@ -18,12 +19,14 @@
     "@tailwindcss/typography": "^0.5.19",
     "marked": "^17.0.5",
     "next": "^16.2.1",
+    "nodemailer": "^8.0.3",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^25.5.0",
+    "@types/nodemailer": "^7.0.11",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.27",

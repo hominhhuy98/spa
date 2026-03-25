@@ -1,0 +1,28 @@
+1:"$Sreact.fragment"
+2:I[22016,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js","/_next/static/chunks/0ka051yepewro.js"],""]
+8:I[97367,["/_next/static/chunks/01xlw8hd842-c.js","/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+9:"$Sreact.suspense"
+3:T6bd,
+      <p>Viêm da cơ địa (Atopic Dermatitis / Chàm) là bệnh da viêm mãn tính tái phát do rối loạn hàng rào bảo vệ da (thiếu Filaggrin) và hoạt hóa miễn dịch Th2 quá mức. Ảnh hưởng 20% trẻ em và 3% người lớn toàn cầu.</p>
+      <h2>Yếu Tố Khởi Phát Cần Tránh</h2>
+      <ul>
+        <li>Xà phòng kiềm mạnh, nước quá nóng (tắm &gt; 5 phút, nước ấm 36–38°C).</li>
+        <li>Vải len, sợi tổng hợp (ưu tiên 100% cotton mềm).</li>
+        <li>Bụi nhà, lông thú cưng, phấn hoa — dị nguyên hít phải.</li>
+        <li>Căng thẳng, thay đổi thời tiết đột ngột.</li>
+        <li>Một số thực phẩm (trứng, sữa, đậu phộng ở trẻ nhỏ — cần test dị ứng trước khi loại trừ).</li>
+      </ul>
+      <h2>Nền Tảng Điều Trị: Dưỡng Ẩm</h2>
+      <p>Dưỡng ẩm chứa <strong>Ceramide</strong> (NMF) là nền tảng điều trị bắt buộc ở mọi cấp độ nặng. Bôi ít nhất 2 lần/ngày, ngay sau khi tắm (trong vòng 3 phút — "soak and smear"). Lượng dùng: 250g/tuần cho người lớn cơ thể toàn thân.</p>
+      <h2>Thuốc Điều Trị Theo Cấp Độ</h2>
+      <ul>
+        <li><strong>Nhẹ:</strong> Corticosteroid bôi nhẹ (Hydrocortisone 1%) ngắt quãng.</li>
+        <li><strong>Vừa:</strong> Ức chế Calcineurin (Tacrolimus 0.03–0.1%) — không teo da, an toàn dùng lâu dài và quanh mắt.</li>
+        <li><strong>Nặng:</strong> Dupilumab (kháng IL-4Rα) — sinh học đầu tiên được FDA chấp thuận cho AD, hiệu quả 60–70% sạch/gần sạch sau 16 tuần.</li>
+      </ul>
+    0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"bg-slate-50 min-h-screen","children":["$","div",null,{"className":"max-w-4xl mx-auto px-4 py-12","children":[["$","$L2",null,{"href":"/tin-tuc","className":"text-primary font-semibold hover:underline inline-flex items-center gap-1 mb-8","children":"← Quay lại Kiến thức Y khoa"}],["$","article",null,{"className":"bg-white rounded-2xl shadow-sm border border-gray-100 p-8 md:p-12","children":[["$","div",null,{"className":"flex flex-wrap items-center gap-3 mb-6","children":[["$","span",null,{"className":"text-xs font-bold px-3 py-1 rounded-full bg-blue-100 text-blue-700","children":"Bệnh Da Mãn Tính"}],["$","span",null,{"className":"text-sm text-gray-400","children":"20 tháng 2, 2026"}]]}],["$","h1",null,{"className":"text-3xl md:text-4xl font-black text-gray-900 mb-6 leading-snug","children":"Chàm Dị Ứng (Atopic Dermatitis): Kiểm Soát Bệnh Lâu Dài"}],["$","div",null,{"className":"flex items-center gap-2 mb-8 pb-6 border-b border-gray-100","children":[["$","svg",null,{"className":"w-4 h-4 text-blue-500 shrink-0","fill":"none","stroke":"currentColor","viewBox":"0 0 24 24","children":["$","path",null,{"strokeLinecap":"round","strokeLinejoin":"round","strokeWidth":2,"d":"M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"}]}],["$","span",null,{"className":"text-sm text-blue-700 font-semibold","children":["Nguồn xác thực: ","NICE Guidelines NG190, EADV 2022"]}]]}],["$","div",null,{"className":"prose prose-lg max-w-none text-gray-700 prose-headings:text-gray-900 prose-headings:font-black prose-a:text-primary prose-strong:text-gray-900 prose-li:text-gray-700 prose-table:text-sm","dangerouslySetInnerHTML":{"__html":"$3"}}],["$","div",null,{"className":"mt-10 pt-6 border-t border-gray-100 bg-amber-50 rounded-xl p-4","children":"$L4"}]]}],"$L5"]}]}],["$L6"],"$L7"]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"GxIyLaFiaVwGYBSrG-GC1"}
+4:["$","p",null,{"className":"text-amber-800 text-sm","children":[["$","strong",null,{"children":"⚠️ Tuyên bố miễn trừ trách nhiệm:"}]," Bài viết mang tính chất thông tin y khoa tham khảo. Không thay thế cho tư vấn, chẩn đoán hoặc chỉ định điều trị của bác sĩ chuyên khoa. Hãy thăm khám trực tiếp để được tư vấn cá nhân hóa."]}]
+5:["$","div",null,{"className":"mt-8 text-center","children":[["$","p",null,{"className":"text-gray-600 mb-4","children":"Cần được tư vấn chuyên sâu về tình trạng da của bạn?"}],["$","$L2",null,{"href":"/dat-lich","className":"bg-primary text-white font-bold px-8 py-3 rounded-full hover:bg-blue-900 transition inline-block","children":"Đặt Lịch Khám Với Bác Sĩ →"}]]}]
+6:["$","script","script-0",{"src":"/_next/static/chunks/0ka051yepewro.js","async":true}]
+7:["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]
+a:null

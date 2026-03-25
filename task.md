@@ -1,66 +1,80 @@
-# Quản lý Nhiệm vụ (Task Backlog) - Dự án Website Phòng khám Da liễu & Spa
-
-Tài liệu này quản lý các tác vụ phát triển chi tiết, được tổ chức theo phương pháp Agile/Scrum. Dựa trên PRD phiên bản 1.0.
+# Quản lý Nhiệm vụ (Task Backlog) — Website CTCP BV Y Dược Sài Gòn
 
 **Chú thích mức độ ưu tiên:** [🔥 Cao] | [⚡ Trung bình] | [🧊 Thấp]
 **Chú thích trạng thái:** ⏳ To-Do | 🚧 In Progress | ✅ Done
+**Cập nhật lần cuối:** 25/03/2026
 
 ---
 
-## 🎯 Giai đoạn 1: Khởi tạo, Giao diện & CMS Cơ bản (Tuần 1 - 3)
+## ✅ Giai đoạn 1: Khởi tạo & Infrastructure (Tuần 1–3)
 
-### Epic: Thiết lập Hệ thống & Infrastructure
-- [x] ✅ **TASK-101:** [🔥 Cao] Thiết lập kho mã nguồn (GitHub/GitLab), quy trình CI/CD cơ bản. `[Backend/Frontend]`
-- [ ] ⏳ **TASK-102:** [🔥 Cao] Thiết lập môi trường server (Dev, Staging), cấu hình domain và SSL. `[DevOps]`
-- [x] ✅ **TASK-103:** [🔥 Cao] Cài đặt & cấu hình Headless CMS / Framework Backend và Database (Next.js Framework). `[Backend]`
-
-### Epic: UI/UX & Frontend Development
-- [x] ✅ **TASK-111:** [🔥 Cao] Thiết kế Wireframe & Mockup giao diện toàn trang trên Figma (bám sát Brand Guideline - Sử dụng ảnh/logo có sẵn từ Assets). `[Designer]`
-- [x] ✅ **TASK-112:** [🔥 Cao] Lập trình giao diện Trang chủ (Hero banner, Dịch vụ nổi bật, Bác sĩ). `[Frontend]`
-- [x] ✅ **TASK-113:** [⚡ Trung bình] Xây dựng cấu trúc layout và Navigation (Menu, Footer). `[Frontend]`
-- [ ] 🚧 **TASK-114:** [🔥 Cao] Lập trình giao diện trang Chi tiết Dịch vụ & Bài viết Kiến thức y khoa. `[Frontend]`
-
-### Epic: CMS Customization
-- [ ] ⏳ **TASK-121:** [🔥 Cao] Định nghĩa Database Schema & Collection cho "Bài viết", "Dịch vụ", "Chuyên mục". `[Backend]`
-- [ ] ⏳ **TASK-122:** [🔥 Cao] Thêm trường dữ liệu (Custom Fields): "Nguồn trích dẫn y khoa" (Bắt buộc). `[Backend]`
+- [x] ✅ **TASK-101** [🔥] Thiết lập kho mã nguồn GitHub, cấu hình Next.js 16 App Router.
+- [x] ✅ **TASK-102** [🔥] Cài đặt TailwindCSS v4 với custom `@theme` variables.
+- [x] ✅ **TASK-103** [🔥] Cấu hình Google Fonts: Be Vietnam Pro + Playfair Display.
+- [x] ✅ **TASK-104** [🔥] Thiết lập `output: 'export'` cho static site generation.
+- [x] ✅ **TASK-111** [🔥] Xây dựng layout toàn trang: Topbar, Navbar sticky, Footer responsive.
+- [x] ✅ **TASK-112** [🔥] Lập trình Trang Chủ: Hero banner, Phác Đồ Điều Trị 6 bệnh lý, Stats, CTA.
+- [x] ✅ **TASK-113** [🔥] Xây dựng trang `/dich-vu-da-lieu` với ICD badge và nguồn Bộ Y Tế VN.
+- [x] ✅ **TASK-114** [⚡] Xây dựng trang `/may-moc` (Thiết Bị Y Tế).
 
 ---
 
-## 🎯 Giai đoạn 2: Tích hợp API Trello (Tuần 4 - 5)
+## ✅ Giai đoạn 2: API & Tính năng cốt lõi (Tuần 4–5)
 
-### Epic: Trello API & Tự động hóa
-- [ ] ⏳ **TASK-201:** [🔥 Cao] Tạo Trello Developer App, lấy API Key/Token và thiết lập Webhook URL (Board: https://trello.com/b/r9bm8SjI/ydsg). `[Backend]`
-- [ ] ⏳ **TASK-202:** [🔥 Cao] Viết API Endpoint (Webhook Receiver) trên Backend để nhận payload từ Trello. `[Backend]`
-- [ ] ⏳ **TASK-203:** [🔥 Cao] Viết logic xử lý: Lọc dữ liệu từ cột "SPA" -> Bỏ qua card không có hình ảnh (Chỉ những bài có hình mới được đăng). `[Backend]`
-- [ ] ⏳ **TASK-204:** [🔥 Cao] Mapping Data: Tiêu đề, Mô tả (Parse Markdown to HTML), Tải & lưu hình ảnh đính kèm. `[Backend]`
-- [ ] ⏳ **TASK-205:** [⚡ Trung bình] Tạo logic lưu bài viết vào CMS dưới trạng thái "Draft" (Bản nháp). `[Backend]`
-- [ ] ⏳ **TASK-206:** [⚡ Trung bình] Viết Unit Test cho luồng đồng bộ Trello. `[QA/Backend]`
-
----
-
-## 🎯 Giai đoạn 3: Tính năng mở rộng & Media (Tuần 6 - 7)
-
-### Epic: Đặt lịch khám
-- [ ] ⏳ **TASK-301:** [🔥 Cao] Thiết kế & lập trình component Form Đặt lịch trên Frontend (Validation đầy đủ). `[Frontend]`
-- [ ] ⏳ **TASK-302:** [🔥 Cao] Viết API tiếp nhận thông tin đặt lịch trên Backend. `[Backend]`
-- [ ] ⏳ **TASK-303:** [🔥 Cao] Tích hợp gửi email thông báo tự động (SMTP/SendGrid) tới Admin/CRM. `[Backend]`
-- [ ] ⏳ **TASK-304:** [⚡ Trung bình] Tích hợp Google reCAPTCHA v3 để chống spam form. `[Frontend/Backend]`
-
-### Epic: Thư viện Hình ảnh (Media Gallery)
-- [ ] ⏳ **TASK-311:** [⚡ Trung bình] Xây dựng giao diện Thư viện ảnh (Masonry grid, Lightbox). `[Frontend]`
-- [ ] ⏳ **TASK-312:** [🔥 Cao] Cấu hình pipeline tự động tối ưu hóa hình ảnh tải lên (Convert sang WebP, resize thumbnail). `[Backend]`
+- [x] ✅ **TASK-201** [🔥] Tạo API endpoint `/api/trello-webhook` nhận payload Trello.
+- [x] ✅ **TASK-202** [🔥] Logic lọc card từ cột "SPA" có đính kèm hình ảnh.
+- [x] ✅ **TASK-203** [🔥] Mapping data: title, Markdown description, attachment image.
+- [x] ✅ **TASK-204** [🔥] Tạo API endpoint `/api/book-appointment` gửi thông báo đặt lịch.
+- [x] ✅ **TASK-205** [🔥] Xây dựng form đặt lịch `/dat-lich` với validation đầy đủ.
+- [x] ✅ **TASK-206** [🔥] Sidebar đặt lịch: thông tin liên hệ, lưu ý khám, chính sách hủy, hotline.
+- [x] ✅ **TASK-207** [⚡] Nhúng Google Maps iframe (không cần API key).
 
 ---
 
-## 🎯 Giai đoạn 4: Kiểm thử, Tối ưu & Go-Live (Tuần 8)
+## ✅ Giai đoạn 3: Nội dung & Mở rộng (Tuần 6–7)
 
-### Epic: Tối ưu Performance & SEO
-- [ ] ⏳ **TASK-401:** [🔥 Cao] Tối ưu hóa chỉ số Core Web Vitals (Lazy load ảnh, minify CSS/JS). `[Frontend]`
-- [ ] ⏳ **TASK-402:** [🔥 Cao] Tích hợp Dynamic Meta tags, Open Graph, Schema Markup Y khoa. `[Frontend]`
-- [ ] ⏳ **TASK-403:** [⚡ Trung bình] Thiết lập tự động tạo file sitemap.xml và robots.txt. `[Backend/Frontend]`
+- [x] ✅ **TASK-301** [🔥] Xây dựng trang `/tin-tuc` danh sách 9 bài viết kiến thức da liễu.
+- [x] ✅ **TASK-302** [🔥] Xây dựng trang `/tin-tuc/[id]` chi tiết bài viết với Markdown renderer.
+- [x] ✅ **TASK-303** [🔥] Xóa toàn bộ tham chiếu tổ chức quốc tế (AAD, EADV, WHO, FDA, NICE) ngoài trang may-moc.
+- [x] ✅ **TASK-304** [🔥] Xây dựng trang `/goi-dich-vu` — 7 danh mục, 17 gói liệu trình.
+- [x] ✅ **TASK-305** [🔥] Xây dựng trang `/bang-gia` — bảng giá đầy đủ (lẻ + combo + body).
+- [x] ✅ **TASK-306** [⚡] Xây dựng trang `/khuyen-mai` — ưu đãi khách hàng mới 3 mức.
+- [x] ✅ **TASK-307** [⚡] Thêm banner khuyến mãi vào homepage (GIẢM 30K–100K).
+- [x] ✅ **TASK-308** [⚡] Xóa trang `/phan-tich-lan-da` và nav link.
 
-### Epic: Kiểm thử (Testing) & Triển khai
-- [ ] ⏳ **TASK-411:** [🔥 Cao] Cross-browser & Cross-device testing (Mobile, Tablet, PC). `[QA]`
-- [ ] ⏳ **TASK-412:** [🔥 Cao] Penetration testing cơ bản, kiểm tra bảo mật API và SQL Injection. `[QA]`
-- [ ] ⏳ **TASK-413:** [🔥 Cao] Đào tạo sử dụng CMS cho đội ngũ Content/Marketing. `[Project Manager]`
-- [ ] ⏳ **TASK-414:** [🔥 Cao] Release Production, chuyển hướng Domain, bàn giao dự án. `[DevOps]`
+---
+
+## ✅ Giai đoạn 4: Thương hiệu & UX (Tuần 8 — Đang hoàn thiện)
+
+- [x] ✅ **TASK-401** [🔥] Cập nhật brand name: "BV Y Dược Sài Gòn" → "CTCP BỆNH VIỆN Y DƯỢC SÀI GÒN".
+- [x] ✅ **TASK-402** [🔥] Cập nhật màu theo logo: Primary `#1A8DC4` (xanh y tế) + Secondary `#C8A040` (vàng đồng).
+- [x] ✅ **TASK-403** [🔥] Thiết kế header Pencil: topbar xanh đậm, brand CTCP, nút CTA vàng đồng.
+- [x] ✅ **TASK-404** [🔥] Thiết kế Color Palette + Hero section trong Pencil extension.
+- [x] ✅ **TASK-405** [🔥] Thiết kế Phác Đồ Điều Trị section trong Pencil (6 card, border-l-4, ICD badge).
+- [x] ✅ **TASK-406** [⚡] Đổi nav "Gói Spa" → "Liệu Trình" (chuyên nghiệp hơn cho da liễu).
+- [x] ✅ **TASK-407** [⚡] Thêm "Bảng Giá" vào navigation.
+- [x] ✅ **TASK-408** [🔥] Pre-select dropdown dịch vụ khi đặt lịch từ trang Liệu Trình (`?dich-vu=`).
+- [x] ✅ **TASK-409** [⚡] Thêm tất cả gói spa vào SERVICES dropdown trang đặt lịch.
+- [x] ✅ **TASK-410** [⚡] Subtitle header: "Da Liễu & Spa" → "Chuyên Khoa Da Liễu".
+
+---
+
+## ⏳ Backlog — Chưa thực hiện
+
+### SEO & Performance
+- [ ] ⏳ **TASK-501** [🔥] Tích hợp Dynamic Meta tags và Open Graph cho từng trang.
+- [ ] ⏳ **TASK-502** [🔥] Schema Markup y khoa (MedicalOrganization, MedicalClinic).
+- [ ] ⏳ **TASK-503** [⚡] Tự động tạo `sitemap.xml` và `robots.txt`.
+- [ ] ⏳ **TASK-504** [⚡] Tích hợp Google reCAPTCHA v3 chống spam form.
+
+### Testing & Go-Live
+- [ ] ⏳ **TASK-511** [🔥] Cross-browser & cross-device testing (Mobile, Tablet, Desktop).
+- [ ] ⏳ **TASK-512** [🔥] Kiểm tra bảo mật API: injection, rate limiting.
+- [ ] ⏳ **TASK-513** [⚡] Cấu hình domain, SSL, deploy production.
+- [ ] ⏳ **TASK-514** [⚡] Đào tạo đội ngũ content sử dụng Trello → website flow.
+
+### Tính năng tương lai
+- [ ] 🧊 **TASK-521** Thư viện ảnh Before & After (Masonry grid + Lightbox).
+- [ ] 🧊 **TASK-522** Tối ưu hình ảnh tự động (WebP conversion pipeline).
+- [ ] 🧊 **TASK-523** Trang bác sĩ/đội ngũ chuyên môn.
+- [ ] 🧊 **TASK-524** Mobile menu hamburger responsive.
