@@ -1,0 +1,18 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyB7Qn_7j5VvXKzg6lgMoIGecAWrgmrTTSw'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=gen-lang-client-0944516945.firebaseapp.com'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_PROJECT_ID=gen-lang-client-0944516945'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=gen-lang-client-0944516945.firebasestorage.app'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=940550884044'
+      - '--build-arg=NEXT_PUBLIC_FIREBASE_APP_ID=1:940550884044:web:83bbba08df232447ee1069'
+      - '--build-arg=NEXT_PUBLIC_SITE_URL=https://dalieuyduocsaigon.com'
+      - '-t'
+      - 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ydsg-web:latest'
+      - '.'
+images:
+  - 'asia-southeast1-docker.pkg.dev/$PROJECT_ID/cloud-run-source-deploy/ydsg-web:latest'
+options:
+  machineType: 'E2_HIGHCPU_8'

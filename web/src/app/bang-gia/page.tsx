@@ -395,7 +395,7 @@ export default function BangGia() {
       {/* Note */}
       <div className="bg-amber-50 border-b border-amber-200 py-3">
         <p className="max-w-5xl mx-auto px-4 text-xs text-amber-800 text-center">
-          ⚕️ Giá dịch vụ chưa bao gồm phí thăm khám bác sĩ. Bác sĩ Chuyên khoa II trực tiếp thăm khám và chỉ định phác đồ phù hợp.&nbsp;
+          ⚕️ Giá dịch vụ chưa bao gồm phí thăm khám bác sĩ. Bác sĩ Chuyên khoa I trực tiếp thăm khám và chỉ định phác đồ phù hợp.&nbsp;
           Sản phẩm sử dụng tuỳ thuộc vào tình trạng da và chỉ định lâm sàng của bác sĩ.
         </p>
       </div>
@@ -657,7 +657,7 @@ export default function BangGia() {
         <div className="bg-primary text-white rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-black mb-2">Đặt Lịch Để Được Tư Vấn Miễn Phí</h3>
           <p className="text-blue-100 text-sm mb-6 max-w-xl mx-auto">
-            Bác sĩ Chuyên khoa II sẽ thăm khám trực tiếp và chỉ định phác đồ phù hợp với tình trạng da của bạn.
+            Bác sĩ Chuyên khoa I sẽ thăm khám trực tiếp và chỉ định phác đồ phù hợp với tình trạng da của bạn.
             Khách hàng mới nhận ưu đãi giảm đến 100.000đ.
           </p>
           <div className="flex flex-wrap justify-center gap-3">

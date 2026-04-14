@@ -1,0 +1,12 @@
+node_modules
+.next
+out
+.env
+.env.local
+.env*.local
+Dockerfile
+.dockerignore
+e2e/
+e2e-report/
+test-results/
+playwright.config.ts

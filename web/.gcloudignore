@@ -1,0 +1,10 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+.env*.local
+e2e/
+e2e-report/
+test-results/
+.git/

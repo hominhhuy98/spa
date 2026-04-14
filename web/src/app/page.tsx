@@ -70,11 +70,11 @@ export default function Home() {
             <h1 className="text-5xl md:text-6xl font-black leading-tight mb-5 tracking-tight">
               Điều Trị<br />Da Liễu
               <span className="font-serif italic font-normal text-secondary-light block mt-2 text-2xl md:text-3xl tracking-normal">
-                Chuẩn Y Khoa Quốc Tế
+                Chuẩn Y Khoa
               </span>
             </h1>
             <p className="text-blue-100 text-sm leading-relaxed mb-8 max-w-md border-l-3 border-secondary-light pl-4">
-              Bác sĩ CKII trực tiếp thăm khám · Phác đồ chuẩn Bộ Y Tế<br />
+              Bác sĩ CKI trực tiếp thăm khám · Phác đồ chuẩn Bộ Y Tế<br />
               Trực thuộc CTCP Bệnh viện Y Dược Sài Gòn
             </p>
             <div className="flex flex-wrap gap-3">
@@ -118,7 +118,7 @@ export default function Home() {
             <div>
               <p className="text-secondary text-xs font-bold uppercase tracking-widest mb-2">Chuyên Khoa Da Liễu</p>
               <h2 className="text-3xl font-black text-primary tracking-tight mb-1">Phác Đồ Điều Trị Chuẩn Y Khoa</h2>
-              <p className="text-gray-500 text-sm">Bác sĩ Chuyên khoa II · Phác đồ chuẩn Bộ Y Tế · Cá nhân hóa từng bệnh nhân</p>
+              <p className="text-gray-500 text-sm">Bác sĩ Chuyên khoa I · Phác đồ chuẩn Bộ Y Tế · Cá nhân hóa từng bệnh nhân</p>
             </div>
             <Link href="/dich-vu-da-lieu"
               className="shrink-0 border border-primary text-primary font-bold px-5 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-colors text-sm self-start md:self-auto">
@@ -247,7 +247,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-black mb-3">Đặt Lịch Khám Hôm Nay</h2>
           <p className="text-blue-100 text-sm mb-8">
-            Bác sĩ Chuyên khoa II thăm khám và xây dựng phác đồ điều trị cá nhân hóa cho bạn.
+            Bác sĩ Chuyên khoa I thăm khám và xây dựng phác đồ điều trị cá nhân hóa cho bạn.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/dat-lich"

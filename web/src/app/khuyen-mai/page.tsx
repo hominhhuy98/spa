@@ -99,7 +99,7 @@ export default function KhuyenMai() {
         <div className="bg-primary text-white rounded-2xl p-8 text-center">
           <h3 className="text-2xl font-black mb-2">Sẵn Sàng Trải Nghiệm?</h3>
           <p className="text-blue-100 text-sm mb-6">
-            Đặt lịch ngay để nhận ưu đãi dành cho khách hàng mới. Bác sĩ Chuyên khoa II
+            Đặt lịch ngay để nhận ưu đãi dành cho khách hàng mới. Bác sĩ Chuyên khoa I
             sẽ thăm khám và tư vấn phác đồ phù hợp nhất cho bạn.
           </p>
           <div className="flex flex-wrap justify-center gap-3">

@@ -242,7 +242,7 @@ const KIEN_THUC = [
       <p><strong>Lời khuyên:</strong> Không chạm tay lên mặt khi chưa rửa tay. Rửa tay sạch trước khi thoa mỹ phẩm. Thay vỏ gối 2–3 lần/tuần để giảm vi khuẩn tiếp xúc với da khi ngủ.</p>
 
       <h2>Bạn Đang Mắc Bao Nhiêu Trong 7 Sai Lầm Này?</h2>
-      <p>Để điều trị mụn đúng cách và hiệu quả, đừng tự loay hoay một mình. Bác sĩ Da liễu Chuyên khoa II tại BV Y Dược Sài Gòn sẽ giúp bạn xác định đúng nguyên nhân và xây dựng phác đồ điều trị cá nhân hóa — tránh lãng phí thời gian và tiền bạc vào những sản phẩm không phù hợp.</p>
+      <p>Để điều trị mụn đúng cách và hiệu quả, đừng tự loay hoay một mình. Bác sĩ Da liễu Chuyên khoa I tại BV Y Dược Sài Gòn sẽ giúp bạn xác định đúng nguyên nhân và xây dựng phác đồ điều trị cá nhân hóa — tránh lãng phí thời gian và tiền bạc vào những sản phẩm không phù hợp.</p>
     `
   },
 ];
