@@ -16,11 +16,28 @@ export default async function CustomerPortalPage() {
   let list: any[] = [];
 
   if (phone) {
+    try {
     const snapshot = await adminDb.collection('appointments')
       .where('phone', '==', phone)
       .orderBy('date', 'desc')
       .get();
-    list = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    list = snapshot.docs.map(doc => {
+      const d = doc.data();
+      return {
+        id: doc.id,
+        name: d.name || '',
+        phone: d.phone || '',
+        service: d.service || '',
+        date: d.date || '',
+        time: d.time || '',
+        status: d.status || 'pending',
+        notes: d.notes || '',
+        appointment_type: d.appointment_type || '',
+        updated_by: d.updated_by || null,
+        assigned_staff: d.assigned_staff || [],
+        created_at: d.created_at?.toDate ? d.created_at.toDate().toISOString() : '',
+      };
+    });
 
     // Resolve doctor names from updated_by
     const updatedByIds = Array.from(new Set(list.map(a => a.updated_by).filter(Boolean))) as string[];
@@ -36,6 +53,9 @@ export default async function CustomerPortalPage() {
         ...a,
         bac_si: a.updated_by ? { full_name: profileMap[String(a.updated_by)] || null } : null,
       }));
+    }
+    } catch (err) {
+      console.error('Portal query error (index may not be ready):', err);
     }
   }
 

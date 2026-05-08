@@ -1,4 +1,5 @@
 import { adminDb } from '@/lib/firebase-admin';
+import { getServerUser } from '@/lib/firebase-session';
 import DatLichForm from './DatLichForm';
 import { Suspense } from 'react';
 
@@ -33,10 +34,21 @@ async function getServiceGroups() {
 }
 
 export default async function DatLich() {
-  const serviceGroups = await getServiceGroups();
+  const [serviceGroups, user] = await Promise.all([
+    getServiceGroups(),
+    getServerUser(),
+  ]);
+
+  // Chỉ pre-fill cho khách hàng (role = customer)
+  const userInfo = user && user.role === 'customer' ? {
+    name: (user.name as string) || '',
+    phone: (user.phone as string) || '',
+    isLoggedIn: true,
+  } : { name: '', phone: '', isLoggedIn: false };
+
   return (
     <Suspense>
-      <DatLichForm serviceGroups={serviceGroups} />
+      <DatLichForm serviceGroups={serviceGroups} userInfo={userInfo} />
     </Suspense>
   );
 }

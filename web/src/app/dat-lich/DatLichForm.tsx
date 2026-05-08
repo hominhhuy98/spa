@@ -8,6 +8,12 @@ interface ServiceGroup {
   items: string[];
 }
 
+interface UserInfo {
+  name: string;
+  phone: string;
+  isLoggedIn: boolean;
+}
+
 function todayVN() {
   return new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Ho_Chi_Minh',
@@ -29,11 +35,13 @@ const TIME_SLOTS = [
   '13:30', '14:00', '14:30', '15:00', '15:30', '16:00', '16:30',
 ];
 
-function DatLichContent({ serviceGroups }: { serviceGroups: ServiceGroup[] }) {
+function DatLichContent({ serviceGroups, userInfo }: { serviceGroups: ServiceGroup[]; userInfo: UserInfo }) {
   const searchParams = useSearchParams();
   const initService = searchParams.get('dich-vu') || '';
   const [formData, setFormData] = useState({
-    name: '', phone: '', service: initService,
+    name: userInfo.name || '',
+    phone: userInfo.phone || '',
+    service: initService,
     date: todayVN(), time: '', notes: '',
   });
   const [status, setStatus] = useState('');
@@ -87,20 +95,67 @@ function DatLichContent({ serviceGroups }: { serviceGroups: ServiceGroup[] }) {
           )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Họ và Tên <span className="text-red-500">*</span></label>
-                <input required type="text" placeholder="Nguyễn Văn A"
-                  className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-sm"
-                  value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+            {/* Info card khi đã đăng nhập */}
+            {userInfo.isLoggedIn ? (
+              <div className="space-y-3">
+                <div className="bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shrink-0 font-black">
+                      {(formData.name || 'KH').split(' ').slice(-2).map(w => w[0]).join('').toUpperCase()}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap mb-1">
+                        <p className="font-black text-gray-900">{formData.name || 'Khách hàng'}</p>
+                        <span className="text-[10px] bg-green-100 text-green-700 font-bold px-2 py-0.5 rounded-full">
+                          Đã xác thực
+                        </span>
+                      </div>
+                      {formData.phone && (
+                        <p className="text-sm text-gray-500">SĐT: <span className="font-semibold text-gray-700">{formData.phone}</span></p>
+                      )}
+                      <p className="text-xs text-gray-400 mt-1">Lịch hẹn sẽ được lưu vào tài khoản của bạn</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bổ sung field thiếu */}
+                {(!formData.name || !formData.phone) && (
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {!formData.name && (
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Họ và Tên <span className="text-red-500">*</span></label>
+                        <input required type="text" placeholder="Nguyễn Văn A"
+                          className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-sm"
+                          value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+                      </div>
+                    )}
+                    {!formData.phone && (
+                      <div>
+                        <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Số Điện Thoại <span className="text-red-500">*</span></label>
+                        <input required type="tel" placeholder="0901 234 567"
+                          className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-sm"
+                          value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
-              <div>
-                <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Số Điện Thoại <span className="text-red-500">*</span></label>
-                <input required type="tel" placeholder="0901 234 567"
-                  className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-sm"
-                  value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Họ và Tên <span className="text-red-500">*</span></label>
+                  <input required type="text" placeholder="Nguyễn Văn A"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-sm"
+                    value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
+                </div>
+                <div>
+                  <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Số Điện Thoại <span className="text-red-500">*</span></label>
+                  <input required type="tel" placeholder="0901 234 567"
+                    className="w-full px-4 py-2.5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition text-sm"
+                    value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
+                </div>
               </div>
-            </div>
+            )}
 
             <div>
               <label className="block text-gray-700 font-semibold mb-1.5 text-sm">Dịch Vụ Quan Tâm <span className="text-red-500">*</span></label>
@@ -292,10 +347,10 @@ function DatLichContent({ serviceGroups }: { serviceGroups: ServiceGroup[] }) {
   );
 }
 
-export default function DatLichForm({ serviceGroups }: { serviceGroups: ServiceGroup[] }) {
+export default function DatLichForm({ serviceGroups, userInfo }: { serviceGroups: ServiceGroup[]; userInfo: UserInfo }) {
   return (
     <Suspense>
-      <DatLichContent serviceGroups={serviceGroups} />
+      <DatLichContent serviceGroups={serviceGroups} userInfo={userInfo} />
     </Suspense>
   );
 }

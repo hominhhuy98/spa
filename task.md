@@ -2,7 +2,7 @@
 
 **Chú thích mức độ ưu tiên:** [🔥 Cao] | [⚡ Trung bình] | [🧊 Thấp]
 **Chú thích trạng thái:** ⏳ To-Do | 🚧 In Progress | ✅ Done
-**Cập nhật lần cuối:** 14/04/2026
+**Cập nhật lần cuối:** 08/05/2026
 
 ---
 
@@ -178,6 +178,37 @@
 - [x] ✅ **TASK-923** [⚡] Icon user SVG thay "KH" khi chưa đăng nhập.
 - [x] ✅ **TASK-924** [⚡] Zalo meta tag verification cho domain.
 - [x] ✅ **TASK-925** [⚡] Fix Firestore Timestamp serialization cho tất cả server components.
+
+---
+
+## ✅ Giai đoạn 10: Customer Portal & Admin UX (Tuần 14–15)
+
+### Đăng ký & Profile khách hàng
+- [x] ✅ **TASK-1001** [🔥] Trang đăng ký tài khoản khách hàng `/dang-ky/` (Họ tên, SĐT, Email, Mật khẩu).
+- [x] ✅ **TASK-1002** [🔥] API `POST /api/auth/register` — tạo Firebase Auth user + customer record + custom claims.
+- [x] ✅ **TASK-1003** [🔥] Auto đăng nhập sau khi đăng ký → redirect `/portal`.
+- [x] ✅ **TASK-1004** [🔥] EditProfileModal: khách hàng tự chỉnh sửa tên, SĐT, email từ portal.
+- [x] ✅ **TASK-1005** [🔥] API `PATCH /api/auth/update-profile` — cập nhật Firebase Auth + customer record.
+- [x] ✅ **TASK-1006** [⚡] Lưu ý rõ ràng: khách chỉ được sửa thông tin cá nhân, không đụng được liệu trình của bác sĩ.
+- [x] ✅ **TASK-1007** [⚡] Trang đăng ký liên kết với Portal Login + Login chính.
+
+### Auto-fill Đặt Lịch
+- [x] ✅ **TASK-1011** [🔥] Khách đã đăng nhập: trang `/dat-lich/` tự động hiện info card với tên + SĐT.
+- [x] ✅ **TASK-1012** [🔥] Badge "Đã xác thực" hiện cho mọi customer đã đăng nhập (SĐT/OTP, Google, Zalo, Email).
+- [x] ✅ **TASK-1013** [⚡] Bổ sung field thiếu (tên hoặc SĐT) khi user thiếu thông tin sau Google/Zalo login.
+
+### Pagination & Search Admin
+- [x] ✅ **TASK-1021** [🔥] Trang `/admin/lich-hen` — phân trang 30 dòng/trang.
+- [x] ✅ **TASK-1022** [🔥] Bộ lọc ngày (Từ/Đến) + tìm kiếm tên/SĐT/dịch vụ real-time.
+- [x] ✅ **TASK-1023** [🔥] Tabs lọc trạng thái với số lượng đếm + nút "Xóa bộ lọc".
+- [x] ✅ **TASK-1024** [🔥] Trang `/admin/khach-hang` — toggle SĐT/Tên + phân trang 30 dòng/trang.
+- [x] ✅ **TASK-1025** [🔥] API `/api/admin/customers/history` hỗ trợ tìm theo `phone` hoặc `name`.
+
+### UI/UX Cleanup
+- [x] ✅ **TASK-1031** [⚡] Xóa "Đặt lịch không cần tài khoản", "Cổng Khách Hàng", "Nhân viên/Bác sĩ đăng nhập" khỏi `/login`.
+- [x] ✅ **TASK-1032** [⚡] Trang dịch vụ public (`/dich-vu-da-lieu`, `/goi-dich-vu`) — bỏ quy trình chi tiết, chỉ hiện đối tượng phù hợp.
+- [x] ✅ **TASK-1033** [⚡] Fix Firestore Timestamp serialization toàn bộ server components (portal, admin chi tiết, lieu-trinh).
+- [x] ✅ **TASK-1034** [⚡] Tạo Firestore composite indexes (status+date, phone+date) cho query.
 
 ---
 

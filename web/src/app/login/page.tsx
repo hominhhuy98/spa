@@ -266,30 +266,13 @@ function LoginForm() {
               <div className="flex-1 h-px" style={{ backgroundColor: '#BFDBFE' }} />
             </div>
 
-            {/* Book without account */}
-            <a href="/dat-lich"
+            {/* Đăng ký */}
+            <a href="/dang-ky"
               className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-sm font-semibold transition-colors hover:opacity-80 border"
               style={{ borderColor: '#BFDBFE', color: '#3B82F6', backgroundColor: '#FFFFFF' }}>
-              <span>📅</span>
-              <span>Đặt lịch không cần tài khoản</span>
+              <span>📝</span>
+              <span>Đăng ký tài khoản mới</span>
             </a>
-
-            {/* Portal link */}
-            <a href="/portal/login"
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-sm font-semibold transition-colors hover:opacity-80 border mt-2"
-              style={{ borderColor: '#BFDBFE', color: '#3B82F6', backgroundColor: '#FFFFFF' }}>
-              <span>👤</span>
-              <span>Cổng Khách Hàng (xem lịch hẹn)</span>
-            </a>
-
-            {/* Staff note */}
-            <div className="flex items-center justify-center gap-2 mt-3 px-4 py-3.5 rounded-xl"
-              style={{ backgroundColor: '#1E3A5F' }}>
-              <span className="text-sm">🔐</span>
-              <span className="text-xs font-medium" style={{ color: '#BFDBFE' }}>
-                Nhân viên & Bác sĩ đăng nhập tại đây
-              </span>
-            </div>
           </div>
         </div>
       </div>

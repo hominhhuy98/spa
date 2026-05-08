@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation';
 import { getServerUser } from '@/lib/firebase-session';
 import { SignOutButton } from '@/components/SignOutButton';
+import EditProfileModal from '@/components/EditProfileModal';
 
 export default async function PortalLayout({ children }: { children: React.ReactNode }) {
   const user = await getServerUser();
@@ -58,7 +59,14 @@ export default async function PortalLayout({ children }: { children: React.React
             {displayName && (
               <p className="text-sm text-gray-500 mt-0.5 truncate">{identity}</p>
             )}
-            <p className="text-xs text-gray-400 mt-1">Mã KH: <span className="font-semibold text-gray-600">{maKhach}</span></p>
+            <div className="flex items-center gap-3 mt-1">
+              <p className="text-xs text-gray-400">Mã KH: <span className="font-semibold text-gray-600">{maKhach}</span></p>
+              <EditProfileModal
+                currentName={String(displayName)}
+                currentPhone={String(phone)}
+                currentEmail={String(email)}
+              />
+            </div>
             {!phone && (
               <p className="text-xs text-amber-600 font-semibold mt-1">
                 ⚠ Chưa liên kết SĐT — liên kết bên dưới để xem lịch hẹn

@@ -1,8 +1,8 @@
 # Tài liệu Yêu cầu Sản phẩm (PRD)
 **Dự án:** Website & Hệ thống Quản lý Nội bộ — CTCP Bệnh Viện Y Dược Sài Gòn
 **Đơn vị chủ quản:** CTCP Bệnh Viện Y Dược Sài Gòn
-**Phiên bản:** 5.0 | **Ngày cập nhật:** 14/04/2026
-**Trạng thái:** Production — Deploy lên Google Cloud Run + domain dalieuyduocsaigon.com
+**Phiên bản:** 5.1 | **Ngày cập nhật:** 08/05/2026
+**Trạng thái:** Production — Hoàn thiện Customer Portal + Admin Backend
 
 ---
 
