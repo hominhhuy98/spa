@@ -8,6 +8,7 @@
     "test:ui": "playwright test --ui",
     "test:headed": "playwright test --headed",
     "test:report": "playwright show-report e2e-report",
+    "test:security": "playwright test 06-security.spec.ts 07-rbac.spec.ts",
     "dev": "next dev",
     "build": "next build",
     "build:static": "next build && move out dist",
