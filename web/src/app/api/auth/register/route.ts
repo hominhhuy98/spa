@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { adminAuth, adminDb } from '@/lib/firebase-admin';
 import { rateLimit, getClientIp, tooManyRequests } from '@/lib/rate-limit';
 import { isValidVNPhone, isValidEmail, isValidPassword, isLenOk, cleanText } from '@/lib/validate';
+import { verifyRecaptcha } from '@/lib/recaptcha';
 
 export async function POST(req: Request) {
   try {
@@ -12,6 +13,12 @@ export async function POST(req: Request) {
     const body = await req.json();
     const phone = body?.phone, email = body?.email, password = body?.password;
     const full_name = cleanText(body?.full_name, 100);
+
+    // reCAPTCHA v3 (chống bot đăng ký hàng loạt)
+    const recaptchaOk = await verifyRecaptcha(body?.recaptchaToken, 'register');
+    if (!recaptchaOk) {
+      return NextResponse.json({ error: 'Xác minh chống bot thất bại. Vui lòng thử lại.' }, { status: 403 });
+    }
 
     if (!full_name || !phone || !password) {
       return NextResponse.json({ error: 'Thiếu thông tin bắt buộc' }, { status: 400 });

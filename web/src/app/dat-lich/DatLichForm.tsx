@@ -2,6 +2,7 @@
 
 import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
+import { getRecaptchaToken } from '@/lib/recaptcha-client';
 
 interface ServiceGroup {
   group: string;
@@ -54,10 +55,11 @@ function DatLichContent({ serviceGroups, userInfo }: { serviceGroups: ServiceGro
     e.preventDefault();
     setStatus('loading');
     try {
+      const recaptchaToken = await getRecaptchaToken('book_appointment');
       const response = await fetch('/api/book-appointment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, recaptchaToken })
       });
       if (response.ok) {
         setStatus('success');

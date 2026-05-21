@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { auth } from '@/lib/firebase';
 import { signInWithCustomToken } from 'firebase/auth';
+import { getRecaptchaToken } from '@/lib/recaptcha-client';
 
 async function createSession(idToken: string) {
   await fetch('/api/auth/session', {
@@ -42,10 +43,11 @@ export default function DangKyPage() {
     setLoading(true);
 
     try {
+      const recaptchaToken = await getRecaptchaToken('register');
       const res = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ full_name: fullName, phone, email: email || undefined, password }),
+        body: JSON.stringify({ full_name: fullName, phone, email: email || undefined, password, recaptchaToken }),
       });
 
       const data = await res.json();

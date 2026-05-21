@@ -22,15 +22,18 @@ export async function rateLimit(
       const doc = await tx.get(ref);
       const data = doc.exists ? doc.data() : null;
 
+      // reset_at lưu dạng Timestamp (để Firestore TTL tự xoá). Đọc về millis.
+      const resetAtMs = data?.reset_at?.toMillis ? data.reset_at.toMillis() : 0;
+
       // Cửa sổ đã hết hạn hoặc chưa có → reset
-      if (!data || (data.reset_at as number) < now) {
-        tx.set(ref, { count: 1, reset_at: now + windowMs });
+      if (!data || resetAtMs < now) {
+        tx.set(ref, { count: 1, reset_at: new Date(now + windowMs) });
         return { allowed: true, remaining: limit - 1, retryAfterSec: 0 };
       }
 
       const count = (data.count as number) || 0;
       if (count >= limit) {
-        const retryAfterSec = Math.ceil(((data.reset_at as number) - now) / 1000);
+        const retryAfterSec = Math.ceil((resetAtMs - now) / 1000);
         return { allowed: false, remaining: 0, retryAfterSec };
       }
 

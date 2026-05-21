@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { adminDb } from '@/lib/firebase-admin';
 import { rateLimit, getClientIp, tooManyRequests } from '@/lib/rate-limit';
 import { isValidVNPhone, isValidDate, isValidTime, isLenOk, cleanText } from '@/lib/validate';
+import { verifyRecaptcha } from '@/lib/recaptcha';
 import nodemailer from 'nodemailer';
 
 // Chuyển SĐT Việt Nam sang định dạng Zalo: 0912... → 84912...
@@ -67,6 +68,12 @@ export async function POST(req: Request) {
     const data = await req.json();
     const rawName = data?.name, rawPhone = data?.phone, rawService = data?.service;
     const date = data?.date, time = data?.time;
+
+    // reCAPTCHA v3 (chống bot) — fail-open nếu chưa cấu hình
+    const recaptchaOk = await verifyRecaptcha(data?.recaptchaToken, 'book_appointment');
+    if (!recaptchaOk) {
+      return NextResponse.json({ error: 'Xác minh chống bot thất bại. Vui lòng thử lại.' }, { status: 403 });
+    }
 
     if (!rawName || !rawPhone || !rawService || !date) {
       return NextResponse.json({ error: 'Thiếu thông tin bắt buộc' }, { status: 400 });
