@@ -67,8 +67,37 @@ npx playwright test 07-rbac.spec.ts
 - Nhân viên KHÔNG vào `/admin`, KHÔNG kê được đơn thuốc (chỉ bác sĩ)
 - **Privilege escalation**: nhân viên/bác sĩ gọi API admin → `403`
 
+## Lớp bảo vệ đã triển khai (v5.2)
+
+### Rate Limiting (`src/lib/rate-limit.ts` — Firestore-based, hợp serverless)
+| Endpoint | Giới hạn |
+|----------|----------|
+| `book-appointment` | 5 lịch/10 phút/IP + 20 lịch/ngày/SĐT |
+| `request-otp` | 1 OTP/60s/SĐT + 5/ngày/SĐT + 20/giờ/IP |
+| `verify-otp` | 5 lần thử/15 phút/SĐT + 30/giờ/IP (chống brute-force) |
+| `register` | 5 tài khoản/giờ/IP |
+| `update-profile` | 10 lần/giờ/user |
+| `customers/history` | 60 lượt tra cứu/phút/nhân viên (chống cào dữ liệu) |
+
+### Input Validation (`src/lib/validate.ts`)
+- SĐT Việt Nam đúng định dạng, email hợp lệ, ngày/giờ hợp lệ
+- Giới hạn độ dài: tên ≤100, dịch vụ ≤150, ghi chú ≤1000 (chống DoS payload)
+- `cleanText()` loại control chars (React tự escape HTML)
+- OTP bắt buộc 6 chữ số; OTP sinh bằng `crypto.randomInt` (CSPRNG)
+
+### Chống lộ thông tin
+- Register: message chung khi trùng email/SĐT (chống enumeration)
+- Error nội bộ không trả ra client (chỉ log server)
+- History: limit 100 kết quả, quét tối đa 500 record (chống OOM + scraping)
+
+### Session
+- Lifetime giảm còn **2 ngày** (từ 5)
+- `httpOnly` + `secure` (production) + `sameSite=lax` (cần cho OAuth)
+- Token giả/sai định dạng bị từ chối ngay
+
 ## Lưu ý bảo mật quan trọng
 1. **Service account key** (`FIREBASE_SERVICE_ACCOUNT_KEY`) chỉ lưu trên Cloud Run env/Secret Manager — KHÔNG commit.
-2. **Middleware** chỉ decode JWT (Edge Runtime), verify đầy đủ ở server components/API routes.
+2. **Middleware** chỉ decode JWT (Edge Runtime), verify đầy đủ ở server components/API routes qua `getServerUser()` (gọi `verifySessionCookie`).
 3. **Custom claims** (`role`) là nguồn phân quyền duy nhất — không tin client.
 4. Tất cả API admin/clinical đều check `getServerUser()` + role trước khi xử lý.
+5. **Cleanup**: tạo Firestore TTL policy cho collection `rate_limits` (field `reset_at`) để tự xoá document cũ.

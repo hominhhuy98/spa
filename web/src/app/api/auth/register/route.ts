@@ -1,26 +1,43 @@
 import { NextResponse } from 'next/server';
 import { adminAuth, adminDb } from '@/lib/firebase-admin';
+import { rateLimit, getClientIp, tooManyRequests } from '@/lib/rate-limit';
+import { isValidVNPhone, isValidEmail, isValidPassword, isLenOk, cleanText } from '@/lib/validate';
 
 export async function POST(req: Request) {
   try {
-    const { full_name, phone, email, password } = await req.json();
+    // ── Rate limit: 5 tài khoản / giờ / IP ──
+    const ipLimit = await rateLimit(`register:ip:${getClientIp(req)}`, 5, 60 * 60 * 1000);
+    if (!ipLimit.allowed) return tooManyRequests(ipLimit.retryAfterSec, 'Quá nhiều tài khoản được tạo. Vui lòng thử lại sau.');
+
+    const body = await req.json();
+    const phone = body?.phone, email = body?.email, password = body?.password;
+    const full_name = cleanText(body?.full_name, 100);
 
     if (!full_name || !phone || !password) {
       return NextResponse.json({ error: 'Thiếu thông tin bắt buộc' }, { status: 400 });
     }
-
-    if (password.length < 6) {
-      return NextResponse.json({ error: 'Mật khẩu phải có ít nhất 6 ký tự' }, { status: 400 });
+    if (!isLenOk(full_name, 1, 100)) {
+      return NextResponse.json({ error: 'Tên không hợp lệ' }, { status: 400 });
+    }
+    if (!isValidVNPhone(phone)) {
+      return NextResponse.json({ error: 'Số điện thoại không hợp lệ' }, { status: 400 });
+    }
+    if (email && !isValidEmail(email)) {
+      return NextResponse.json({ error: 'Email không hợp lệ' }, { status: 400 });
+    }
+    if (!isValidPassword(password)) {
+      return NextResponse.json({ error: 'Mật khẩu phải có 6–128 ký tự' }, { status: 400 });
     }
 
     // Email: dùng email thật nếu có, hoặc tạo email giả từ SĐT
     const phoneDigits = phone.replace(/\D/g, '');
-    const userEmail = email?.trim() || `customer_${phoneDigits}@portal.ydsg.vn`;
+    const userEmail = (email?.trim()) || `customer_${phoneDigits}@portal.ydsg.vn`;
 
     // Kiểm tra user đã tồn tại chưa
     try {
       await adminAuth.getUserByEmail(userEmail);
-      return NextResponse.json({ error: 'Email hoặc số điện thoại đã được đăng ký' }, { status: 409 });
+      // Không tiết lộ email/SĐT đã tồn tại → message chung chung
+      return NextResponse.json({ error: 'Không thể tạo tài khoản với thông tin này. Vui lòng kiểm tra lại hoặc đăng nhập.' }, { status: 409 });
     } catch {
       // Chưa tồn tại → tiếp tục tạo
     }
@@ -50,7 +67,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ customToken }, { status: 201 });
   } catch (err) {
     console.error('register error:', err);
-    const message = err instanceof Error ? err.message : 'Internal Server Error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    // Không trả message nội bộ ra client
+    return NextResponse.json({ error: 'Không thể tạo tài khoản. Vui lòng thử lại sau.' }, { status: 500 });
   }
 }

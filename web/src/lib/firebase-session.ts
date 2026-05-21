@@ -2,9 +2,10 @@ import { cookies } from "next/headers";
 import { adminAuth } from "./firebase-admin";
 
 const SESSION_COOKIE_NAME = "__session";
-const SESSION_EXPIRY = 60 * 60 * 24 * 5 * 1000; // 5 days
+const SESSION_EXPIRY = 60 * 60 * 24 * 2 * 1000; // 2 days (giảm từ 5 — hạn chế session bị đánh cắp)
 
 export async function createSessionCookie(idToken: string) {
+  // createSessionCookie verify idToken qua Firebase Admin — token giả sẽ throw
   const sessionCookie = await adminAuth.createSessionCookie(idToken, {
     expiresIn: SESSION_EXPIRY,
   });
@@ -13,7 +14,7 @@ export async function createSessionCookie(idToken: string) {
   cookieStore.set(SESSION_COOKIE_NAME, sessionCookie, {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
-    sameSite: "lax",
+    sameSite: "lax", // lax: cần cho OAuth redirect (Google/Zalo) hoạt động
     path: "/",
     maxAge: SESSION_EXPIRY / 1000,
   });

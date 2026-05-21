@@ -1,8 +1,8 @@
 # Tài liệu Yêu cầu Sản phẩm (PRD)
 **Dự án:** Website & Hệ thống Quản lý Nội bộ — CTCP Bệnh Viện Y Dược Sài Gòn
 **Đơn vị chủ quản:** CTCP Bệnh Viện Y Dược Sài Gòn
-**Phiên bản:** 5.1 | **Ngày cập nhật:** 08/05/2026
-**Trạng thái:** Production — Hoàn thiện Customer Portal + Admin Backend
+**Phiên bản:** 5.2 | **Ngày cập nhật:** 21/05/2026
+**Trạng thái:** Production — Tăng cường Bảo mật (Rate Limit, Validation, E2E Security)
 
 ---
 

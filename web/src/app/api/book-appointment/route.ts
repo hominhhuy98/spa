@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { adminDb } from '@/lib/firebase-admin';
+import { rateLimit, getClientIp, tooManyRequests } from '@/lib/rate-limit';
+import { isValidVNPhone, isValidDate, isValidTime, isLenOk, cleanText } from '@/lib/validate';
 import nodemailer from 'nodemailer';
 
 // Chuyển SĐT Việt Nam sang định dạng Zalo: 0912... → 84912...
@@ -57,12 +59,34 @@ async function sendZaloNotification(params: {
 
 export async function POST(req: Request) {
   try {
-    const data = await req.json();
-    const { name, phone, service, date, time, notes } = data;
+    // ── Rate limit: 5 lịch / 10 phút / IP + 20 lịch / ngày / SĐT ──
+    const ip = getClientIp(req);
+    const ipLimit = await rateLimit(`book:ip:${ip}`, 5, 10 * 60 * 1000);
+    if (!ipLimit.allowed) return tooManyRequests(ipLimit.retryAfterSec, 'Bạn đã đặt quá nhiều lịch. Vui lòng thử lại sau.');
 
-    if (!name || !phone || !service || !date) {
+    const data = await req.json();
+    const rawName = data?.name, rawPhone = data?.phone, rawService = data?.service;
+    const date = data?.date, time = data?.time;
+
+    if (!rawName || !rawPhone || !rawService || !date) {
       return NextResponse.json({ error: 'Thiếu thông tin bắt buộc' }, { status: 400 });
     }
+
+    // ── Validate & sanitize ──
+    const name = cleanText(rawName, 100);
+    const phone = cleanText(rawPhone, 20);
+    const service = cleanText(rawService, 150);
+    const notes = cleanText(data?.notes, 1000);
+
+    if (!isLenOk(name, 1, 100)) return NextResponse.json({ error: 'Tên không hợp lệ' }, { status: 400 });
+    if (!isValidVNPhone(phone)) return NextResponse.json({ error: 'Số điện thoại không hợp lệ' }, { status: 400 });
+    if (!isLenOk(service, 1, 150)) return NextResponse.json({ error: 'Dịch vụ không hợp lệ' }, { status: 400 });
+    if (!isValidDate(date)) return NextResponse.json({ error: 'Ngày không hợp lệ' }, { status: 400 });
+    if (!isValidTime(time || '')) return NextResponse.json({ error: 'Giờ không hợp lệ' }, { status: 400 });
+
+    // Rate limit theo SĐT (chống 1 người spam nhiều IP)
+    const phoneLimit = await rateLimit(`book:phone:${phone.replace(/\D/g, '')}`, 20, 24 * 60 * 60 * 1000);
+    if (!phoneLimit.allowed) return tooManyRequests(phoneLimit.retryAfterSec, 'Số điện thoại này đã đặt quá nhiều lịch hôm nay.');
 
     // Kiểm tra ngày đã qua
     const today = new Date().toISOString().slice(0, 10);

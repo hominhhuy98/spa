@@ -3,7 +3,7 @@
  * Bao gồm: đăng nhập, dashboard, quản lý lịch hẹn, nhân sự, khách hàng
  */
 import { test, expect } from '@playwright/test';
-import { loginStaff, logout, ACCOUNTS, futureDate } from './helpers';
+import { loginAdmin, logout, ACCOUNTS, futureDate } from './helpers';
 
 test.describe('Admin — Xác thực', () => {
   test('truy cập /admin khi chưa đăng nhập → redirect về /login', async ({ page }) => {
@@ -20,20 +20,20 @@ test.describe('Admin — Xác thực', () => {
   });
 
   test('đăng nhập admin thành công → vào /admin dashboard', async ({ page }) => {
-    await loginStaff(page, 'admin');
+    await loginAdmin(page);
     await expect(page).toHaveURL(/\/admin/);
     await expect(page.getByText(/dashboard|lịch hẹn/i).first()).toBeVisible();
   });
 
   test('đăng xuất → redirect về /login', async ({ page }) => {
-    await loginStaff(page, 'admin');
+    await loginAdmin(page);
     await logout(page);
     await expect(page).toHaveURL(/\/login/);
   });
 });
 
 test.describe('Admin — Dashboard', () => {
-  test.beforeEach(async ({ page }) => { await loginStaff(page, 'admin'); });
+  test.beforeEach(async ({ page }) => { await loginAdmin(page); });
 
   test('sidebar có đủ các menu: Dashboard, Lịch Hẹn, Nhân Sự, Khách Hàng', async ({ page }) => {
     for (const label of ['Dashboard', 'Lịch Hẹn', 'Nhân Sự', 'Khách Hàng']) {
@@ -49,7 +49,7 @@ test.describe('Admin — Dashboard', () => {
 
 test.describe('Admin — Quản lý Lịch Hẹn', () => {
   test.beforeEach(async ({ page }) => {
-    await loginStaff(page, 'admin');
+    await loginAdmin(page);
     await page.getByRole('link', { name: /lịch hẹn/i }).click();
     await expect(page).toHaveURL(/\/admin\/lich-hen/);
   });
@@ -104,7 +104,7 @@ test.describe('Admin — Quản lý Lịch Hẹn', () => {
 
 test.describe('Admin — Quản lý Nhân Sự', () => {
   test.beforeEach(async ({ page }) => {
-    await loginStaff(page, 'admin');
+    await loginAdmin(page);
     await page.getByRole('link', { name: /nhân sự/i }).click();
     await expect(page).toHaveURL(/\/admin\/nhan-su/);
   });
@@ -139,7 +139,7 @@ test.describe('Admin — Quản lý Nhân Sự', () => {
 
 test.describe('Admin — Tra cứu Khách Hàng', () => {
   test.beforeEach(async ({ page }) => {
-    await loginStaff(page, 'admin');
+    await loginAdmin(page);
     await page.getByRole('link', { name: /khách hàng/i }).click();
     await expect(page).toHaveURL(/\/admin\/khach-hang/);
   });

@@ -2,7 +2,7 @@
 
 **Chú thích mức độ ưu tiên:** [🔥 Cao] | [⚡ Trung bình] | [🧊 Thấp]
 **Chú thích trạng thái:** ⏳ To-Do | 🚧 In Progress | ✅ Done
-**Cập nhật lần cuối:** 08/05/2026
+**Cập nhật lần cuối:** 21/05/2026
 
 ---
 
@@ -209,6 +209,37 @@
 - [x] ✅ **TASK-1032** [⚡] Trang dịch vụ public (`/dich-vu-da-lieu`, `/goi-dich-vu`) — bỏ quy trình chi tiết, chỉ hiện đối tượng phù hợp.
 - [x] ✅ **TASK-1033** [⚡] Fix Firestore Timestamp serialization toàn bộ server components (portal, admin chi tiết, lieu-trinh).
 - [x] ✅ **TASK-1034** [⚡] Tạo Firestore composite indexes (status+date, phone+date) cho query.
+
+---
+
+## ✅ Giai đoạn 11: Tăng cường Bảo mật & E2E Security Testing (Tuần 16)
+
+### Rate Limiting & Anti-spam
+- [x] ✅ **TASK-1101** [🔥] Lib `rate-limit.ts` dùng Firestore (hợp serverless Cloud Run).
+- [x] ✅ **TASK-1102** [🔥] book-appointment: 5 lịch/10ph/IP + 20/ngày/SĐT.
+- [x] ✅ **TASK-1103** [🔥] request-otp: 1/60s + 5/ngày/SĐT + 20/giờ/IP (chống spam Zalo ZNS).
+- [x] ✅ **TASK-1104** [🔥] verify-otp: 5 lần/15ph/SĐT + 30/giờ/IP (chống brute-force OTP).
+- [x] ✅ **TASK-1105** [🔥] register: 5 tài khoản/giờ/IP.
+- [x] ✅ **TASK-1106** [🔥] update-profile: 10/giờ/user. history: 60/phút/nhân viên (chống cào dữ liệu).
+
+### Input Validation & Sanitization
+- [x] ✅ **TASK-1111** [🔥] Lib `validate.ts`: SĐT VN, email, ngày/giờ, độ dài.
+- [x] ✅ **TASK-1112** [🔥] Giới hạn độ dài input (tên ≤100, dịch vụ ≤150, ghi chú ≤1000) chống DoS payload.
+- [x] ✅ **TASK-1113** [🔥] `cleanText()` loại control chars; OTP bắt buộc 6 số.
+- [x] ✅ **TASK-1114** [🔥] OTP sinh bằng `crypto.randomInt` (CSPRNG) thay `Math.random`.
+
+### Chống lộ thông tin & hardening
+- [x] ✅ **TASK-1121** [🔥] Register: message chung khi trùng (chống account enumeration).
+- [x] ✅ **TASK-1122** [🔥] Ẩn error nội bộ khỏi response client.
+- [x] ✅ **TASK-1123** [🔥] history: limit 100 kết quả, quét tối đa 500 record (chống OOM/scraping).
+- [x] ✅ **TASK-1124** [🔥] update-profile: check SĐT trùng người khác (chống IDOR).
+- [x] ✅ **TASK-1125** [🔥] session: validate format idToken, giảm lifetime 5→2 ngày.
+
+### E2E Security Testing (Playwright)
+- [x] ✅ **TASK-1131** [🔥] `06-security.spec.ts` — 44 test: route protection, API auth, session, validation, rate-limit.
+- [x] ✅ **TASK-1132** [🔥] `07-rbac.spec.ts` — phân quyền role + chống privilege escalation.
+- [x] ✅ **TASK-1133** [⚡] Hỗ trợ test production qua `E2E_BASE_URL`; `e2e/README.md` đầy đủ.
+- [x] ✅ **TASK-1134** [⚡] Dọn test legacy (03-05) thời Supabase không còn dùng được.
 
 ---
 

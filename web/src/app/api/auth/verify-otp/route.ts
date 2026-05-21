@@ -1,11 +1,32 @@
 import { NextResponse } from 'next/server';
 import { adminAuth, adminDb } from '@/lib/firebase-admin';
+import { rateLimit, getClientIp, tooManyRequests } from '@/lib/rate-limit';
+import { isValidVNPhone, cleanText } from '@/lib/validate';
 
 export async function POST(req: Request) {
   try {
     const { phone, otp_code, full_name } = await req.json();
     if (!phone || !otp_code) {
       return NextResponse.json({ error: 'Thiếu thông tin' }, { status: 400 });
+    }
+    if (!isValidVNPhone(phone)) {
+      return NextResponse.json({ error: 'Số điện thoại không hợp lệ' }, { status: 400 });
+    }
+    // OTP phải là 6 chữ số
+    if (!/^\d{6}$/.test(String(otp_code))) {
+      return NextResponse.json({ error: 'Mã OTP không hợp lệ' }, { status: 400 });
+    }
+
+    const phoneDigits = phone.replace(/\D/g, '');
+
+    // ── Chống brute-force: tối đa 5 lần thử / 15 phút / SĐT + 30 / giờ / IP ──
+    const phoneAttempts = await rateLimit(`otp:verify:phone:${phoneDigits}`, 5, 15 * 60 * 1000);
+    if (!phoneAttempts.allowed) {
+      return tooManyRequests(phoneAttempts.retryAfterSec, 'Bạn đã nhập sai OTP quá nhiều lần. Vui lòng thử lại sau.');
+    }
+    const ipAttempts = await rateLimit(`otp:verify:ip:${getClientIp(req)}`, 30, 60 * 60 * 1000);
+    if (!ipAttempts.allowed) {
+      return tooManyRequests(ipAttempts.retryAfterSec, 'Quá nhiều lần thử từ thiết bị này.');
     }
 
     // Xác thực OTP
@@ -34,6 +55,8 @@ export async function POST(req: Request) {
     // Đánh dấu OTP đã dùng
     await otpDoc.ref.update({ used: true });
 
+    const cleanName = full_name ? cleanText(full_name, 100) : null;
+
     // Upsert bản ghi khách hàng
     const customerQuery = await adminDb.collection('customers')
       .where('phone', '==', phone).limit(1).get();
@@ -41,7 +64,7 @@ export async function POST(req: Request) {
       await adminDb.collection('customers').add({
         phone,
         zalo_id: null,
-        full_name: full_name || null,
+        full_name: cleanName,
         created_at: new Date(),
       });
     }
@@ -59,7 +82,7 @@ export async function POST(req: Request) {
       const newUser = await adminAuth.createUser({
         email: deterministicEmail,
         emailVerified: true,
-        displayName: full_name || undefined,
+        displayName: cleanName || undefined,
         phoneNumber: phone.startsWith('+') ? phone : `+84${phone.replace(/\D/g, '').replace(/^0/, '')}`,
       });
       uid = newUser.uid;

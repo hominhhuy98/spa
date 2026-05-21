@@ -149,8 +149,71 @@ test.describe('🔒 Bảo mật — Input Validation', () => {
         date: new Date(Date.now() + 86400000).toISOString().slice(0, 10),
       }),
     });
-    // API chấp nhận lưu (React tự escape khi render) — không được trả 500
-    expect([200, 422]).toContain(res.status());
+    // API chấp nhận lưu (React tự escape khi render) hoặc rate-limit — không được 500
+    expect([200, 422, 429]).toContain(res.status());
+  });
+
+  test('SĐT sai định dạng khi đặt lịch → 400', async ({ request }) => {
+    const res = await request.post(`${BASE}/api/book-appointment`, {
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify({
+        name: 'Test', phone: 'not-a-phone', service: 'Test',
+        date: new Date(Date.now() + 86400000).toISOString().slice(0, 10),
+      }),
+    });
+    expect([400, 429]).toContain(res.status());
+  });
+
+  test('Payload tên khổng lồ (DoS) → bị cắt/từ chối, không crash', async ({ request }) => {
+    const res = await request.post(`${BASE}/api/book-appointment`, {
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify({
+        name: 'A'.repeat(500000), phone: '0901666666', service: 'Test',
+        date: new Date(Date.now() + 86400000).toISOString().slice(0, 10),
+      }),
+    });
+    // Không được 500 — phải xử lý gọn (cắt còn 100 ký tự) hoặc rate-limit
+    expect([200, 400, 422, 429]).toContain(res.status());
+  });
+
+  test('OTP sai định dạng → 400', async ({ request }) => {
+    const res = await request.post(`${BASE}/api/auth/verify-otp`, {
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify({ phone: '0901555555', otp_code: 'abc' }),
+    });
+    expect([400, 429]).toContain(res.status());
+  });
+});
+
+test.describe('🔒 Bảo mật — Rate Limiting (chống spam/brute-force)', () => {
+  test('Spam đặt lịch nhiều lần → bị chặn 429', async ({ request }) => {
+    const validBody = {
+      name: 'Spam Test', phone: '0901444444', service: 'Test',
+      date: new Date(Date.now() + 86400000).toISOString().slice(0, 10),
+    };
+    let got429 = false;
+    // Gửi 10 request liên tiếp — rate limit là 5/10 phút/IP
+    for (let i = 0; i < 10; i++) {
+      const res = await request.post(`${BASE}/api/book-appointment`, {
+        headers: { 'Content-Type': 'application/json' },
+        data: JSON.stringify(validBody),
+      });
+      if (res.status() === 429) { got429 = true; break; }
+    }
+    expect(got429).toBe(true);
+  });
+
+  test('Brute-force verify-otp → bị chặn 429 sau vài lần', async ({ request }) => {
+    let got429 = false;
+    // Rate limit 5 lần/15 phút/SĐT
+    for (let i = 0; i < 10; i++) {
+      const res = await request.post(`${BASE}/api/auth/verify-otp`, {
+        headers: { 'Content-Type': 'application/json' },
+        data: JSON.stringify({ phone: '0901333333', otp_code: String(100000 + i) }),
+      });
+      if (res.status() === 429) { got429 = true; break; }
+    }
+    expect(got429).toBe(true);
   });
 });
 
